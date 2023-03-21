@@ -13,6 +13,7 @@ dependencies:
   plugin_platform_interface: ^2.0.2
 
   http: ^0.13.0
+  cupertino_http: ^0.1.0
   jni: ^0.3.0
 
 dev_dependencies:

@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:cupertino_http/cupertino_http.dart';
 import 'package:fox_http/src/okhttp_client.dart' show OkHttpClient;
 import 'package:http/http.dart';
 
@@ -151,6 +152,8 @@ Future<T> _withClient<T>(Future<T> Function(Client) fn) async {
   if (Platform.isAndroid) {
     /// use OkHttp
     client = OkHttpClient();
+  } else if (Platform.isIOS || Platform.isMacOS) {
+    client = CupertinoClient.defaultSessionConfiguration();
   } else {
     client = Client();
   }
