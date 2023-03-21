@@ -27,9 +27,9 @@ class OkHttpClient extends BaseClient {
   }
 }
 
-StreamedResponse _execute(
+Future<StreamedResponse> _execute(
   BaseRequest httpRequest,
-) {
+) async {
   final requestBuilder = okhttp3.Request_Builder()
     ..url1(httpRequest.url.toString().toJString())
     ..headers(
@@ -88,10 +88,28 @@ StreamedResponse _execute(
         break;
     }
   } else if (httpRequest is MultipartRequest) {
-    /// TODO: implementation
     final bodyBuilder = okhttp3.MultipartBody_Builder(
       okhttp3.UUID.randomUUID().toString1(),
-    );
+    )..setType(okhttp3.MultipartBody.FORM);
+
+    for (final file in httpRequest.files) {
+      final bytes = await file.finalize().bytesToString();
+      bodyBuilder.addFormDataPart1(
+        file.field.toJString(),
+        (file.filename ?? '').toJString(),
+        okhttp3.RequestBody.create(
+          bytes.toJString(),
+          okhttp3.MediaType.parse(file.contentType.mimeType.toJString()),
+        ),
+      );
+    }
+    for (final entry in httpRequest.fields.entries) {
+      bodyBuilder.addFormDataPart(
+        entry.key.toJString(),
+        entry.value.toJString(),
+      );
+    }
+
     final body = bodyBuilder.build();
     bodyBuilder.delete();
 
