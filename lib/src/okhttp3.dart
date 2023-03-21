@@ -287,7 +287,7 @@ class OkHttpClient extends jni.JObject {
 
   /// from: public java.util.List interceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  List<Interceptor> interceptors() => const $ListType($InterceptorType())
+  List<jni.JObject> interceptors() => const $ListType(jni.JObjectType())
       .fromRef(_interceptors(reference).object);
 
   static final _networkInterceptors = jniLookup<
@@ -298,7 +298,7 @@ class OkHttpClient extends jni.JObject {
 
   /// from: public java.util.List networkInterceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  List<Interceptor> networkInterceptors() => const $ListType($InterceptorType())
+  List<jni.JObject> networkInterceptors() => const $ListType(jni.JObjectType())
       .fromRef(_networkInterceptors(reference).object);
 
   static final _eventListenerFactory = jniLookup<
@@ -818,7 +818,7 @@ class OkHttpClient_Builder extends jni.JObject {
 
   /// from: public java.util.List interceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  List<Interceptor> interceptors() => const $ListType($InterceptorType())
+  List<jni.JObject> interceptors() => const $ListType(jni.JObjectType())
       .fromRef(_interceptors(reference).object);
 
   static final _addInterceptor = jniLookup<
@@ -832,7 +832,7 @@ class OkHttpClient_Builder extends jni.JObject {
 
   /// from: public okhttp3.OkHttpClient$Builder addInterceptor(okhttp3.Interceptor interceptor)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder addInterceptor(Interceptor interceptor) =>
+  OkHttpClient_Builder addInterceptor(jni.JObject interceptor) =>
       const $OkHttpClient_BuilderType()
           .fromRef(_addInterceptor(reference, interceptor.reference).object);
 
@@ -844,7 +844,7 @@ class OkHttpClient_Builder extends jni.JObject {
 
   /// from: public java.util.List networkInterceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  List<Interceptor> networkInterceptors() => const $ListType($InterceptorType())
+  List<jni.JObject> networkInterceptors() => const $ListType(jni.JObjectType())
       .fromRef(_networkInterceptors(reference).object);
 
   static final _addNetworkInterceptor = jniLookup<
@@ -858,7 +858,7 @@ class OkHttpClient_Builder extends jni.JObject {
 
   /// from: public okhttp3.OkHttpClient$Builder addNetworkInterceptor(okhttp3.Interceptor interceptor)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder addNetworkInterceptor(Interceptor interceptor) =>
+  OkHttpClient_Builder addNetworkInterceptor(jni.JObject interceptor) =>
       const $OkHttpClient_BuilderType().fromRef(
           _addNetworkInterceptor(reference, interceptor.reference).object);
 
@@ -1003,7 +1003,8 @@ class Call extends jni.JObject {
 
   /// from: public abstract okio.Timeout timeout()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout timeout() => const $TimeoutType().fromRef(_timeout(reference).object);
+  jni.JObject timeout() =>
+      const jni.JObjectType().fromRef(_timeout(reference).object);
 
   static final _clone = jniLookup<
           ffi.NativeFunction<
@@ -1465,191 +1466,6 @@ extension $Headers_BuilderArray on jni.JArray<Headers_Builder> {
   }
 }
 
-/// from: okhttp3.CacheControl
-class CacheControl extends jni.JObject {
-  late final jni.JObjType? _$type;
-  @override
-  jni.JObjType get $type => _$type ??= type;
-
-  CacheControl.fromRef(
-    jni.JObjectPtr ref,
-  ) : super.fromRef(ref);
-
-  /// The type which includes information such as the signature of this class.
-  static const type = $CacheControlType();
-
-  static final _get_FORCE_NETWORK =
-      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
-              "get_CacheControl__FORCE_NETWORK")
-          .asFunction<jni.JniResult Function()>();
-
-  /// from: static public final okhttp3.CacheControl FORCE_NETWORK
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  static CacheControl get FORCE_NETWORK =>
-      const $CacheControlType().fromRef(_get_FORCE_NETWORK().object);
-
-  static final _get_FORCE_CACHE =
-      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
-              "get_CacheControl__FORCE_CACHE")
-          .asFunction<jni.JniResult Function()>();
-
-  /// from: static public final okhttp3.CacheControl FORCE_CACHE
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  static CacheControl get FORCE_CACHE =>
-      const $CacheControlType().fromRef(_get_FORCE_CACHE().object);
-
-  static final _noCache = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__noCache")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean noCache()
-  bool noCache() => _noCache(reference).boolean;
-
-  static final _noStore = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__noStore")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean noStore()
-  bool noStore() => _noStore(reference).boolean;
-
-  static final _maxAgeSeconds = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__maxAgeSeconds")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public int maxAgeSeconds()
-  int maxAgeSeconds() => _maxAgeSeconds(reference).integer;
-
-  static final _sMaxAgeSeconds = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__sMaxAgeSeconds")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public int sMaxAgeSeconds()
-  int sMaxAgeSeconds() => _sMaxAgeSeconds(reference).integer;
-
-  static final _isPrivate = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__isPrivate")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean isPrivate()
-  bool isPrivate() => _isPrivate(reference).boolean;
-
-  static final _isPublic = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__isPublic")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean isPublic()
-  bool isPublic() => _isPublic(reference).boolean;
-
-  static final _mustRevalidate = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__mustRevalidate")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean mustRevalidate()
-  bool mustRevalidate() => _mustRevalidate(reference).boolean;
-
-  static final _maxStaleSeconds = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__maxStaleSeconds")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public int maxStaleSeconds()
-  int maxStaleSeconds() => _maxStaleSeconds(reference).integer;
-
-  static final _minFreshSeconds = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__minFreshSeconds")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public int minFreshSeconds()
-  int minFreshSeconds() => _minFreshSeconds(reference).integer;
-
-  static final _onlyIfCached = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__onlyIfCached")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean onlyIfCached()
-  bool onlyIfCached() => _onlyIfCached(reference).boolean;
-
-  static final _noTransform = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__noTransform")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean noTransform()
-  bool noTransform() => _noTransform(reference).boolean;
-
-  static final _immutable = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__immutable")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean immutable()
-  bool immutable() => _immutable(reference).boolean;
-
-  static final _parse = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__parse")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: static public okhttp3.CacheControl parse(okhttp3.Headers headers)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  static CacheControl parse(Headers headers) =>
-      const $CacheControlType().fromRef(_parse(headers.reference).object);
-
-  static final _toString1 = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("CacheControl__toString1")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public java.lang.String toString()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JString toString1() =>
-      const jni.JStringType().fromRef(_toString1(reference).object);
-}
-
-class $CacheControlType extends jni.JObjType<CacheControl> {
-  const $CacheControlType();
-
-  @override
-  String get signature => r"Lokhttp3/CacheControl;";
-
-  @override
-  CacheControl fromRef(jni.JObjectPtr ref) => CacheControl.fromRef(ref);
-}
-
-extension $CacheControlArray on jni.JArray<CacheControl> {
-  CacheControl operator [](int index) {
-    return (elementType as $CacheControlType)
-        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
-  }
-
-  void operator []=(int index, CacheControl value) {
-    (this as jni.JArray<jni.JObject>)[index] = value;
-  }
-}
-
 /// from: okhttp3.Request
 class Request extends jni.JObject {
   late final jni.JObjType? _$type;
@@ -1770,8 +1586,8 @@ class Request extends jni.JObject {
 
   /// from: public okhttp3.CacheControl cacheControl()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  CacheControl cacheControl() =>
-      const $CacheControlType().fromRef(_cacheControl(reference).object);
+  jni.JObject cacheControl() =>
+      const jni.JObjectType().fromRef(_cacheControl(reference).object);
 
   static final _isHttps = jniLookup<
           ffi.NativeFunction<
@@ -1943,7 +1759,7 @@ class Request_Builder extends jni.JObject {
 
   /// from: public okhttp3.Request$Builder cacheControl(okhttp3.CacheControl cacheControl)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  Request_Builder cacheControl(CacheControl cacheControl) =>
+  Request_Builder cacheControl(jni.JObject cacheControl) =>
       const $Request_BuilderType()
           .fromRef(_cacheControl(reference, cacheControl.reference).object);
 
@@ -2139,8 +1955,8 @@ class RequestBody extends jni.JObject {
 
   /// from: public abstract okhttp3.MediaType contentType()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject contentType() =>
-      const jni.JObjectType().fromRef(_contentType(reference).object);
+  MediaType contentType() =>
+      const $MediaTypeType().fromRef(_contentType(reference).object);
 
   static final _contentLength = jniLookup<
           ffi.NativeFunction<
@@ -2191,7 +2007,7 @@ class RequestBody extends jni.JObject {
 
   /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create(jni.JObject mediaType, jni.JString string) =>
+  static RequestBody create(MediaType mediaType, jni.JString string) =>
       const $RequestBodyType()
           .fromRef(_create(mediaType.reference, string.reference).object);
 
@@ -2205,7 +2021,7 @@ class RequestBody extends jni.JObject {
 
   /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create1(jni.JObject mediaType, jni.JObject byteString) =>
+  static RequestBody create1(MediaType mediaType, jni.JObject byteString) =>
       const $RequestBodyType()
           .fromRef(_create1(mediaType.reference, byteString.reference).object);
 
@@ -2219,7 +2035,7 @@ class RequestBody extends jni.JObject {
 
   /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create2(jni.JObject mediaType, jni.JArray<jni.JByte> bs) =>
+  static RequestBody create2(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
       const $RequestBodyType()
           .fromRef(_create2(mediaType.reference, bs.reference).object);
 
@@ -2237,7 +2053,7 @@ class RequestBody extends jni.JObject {
   /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs, int i, int i1)
   /// The returned object must be deleted after use, by calling the `delete` method.
   static RequestBody create3(
-          jni.JObject mediaType, jni.JArray<jni.JByte> bs, int i, int i1) =>
+          MediaType mediaType, jni.JArray<jni.JByte> bs, int i, int i1) =>
       const $RequestBodyType()
           .fromRef(_create3(mediaType.reference, bs.reference, i, i1).object);
 
@@ -2251,7 +2067,7 @@ class RequestBody extends jni.JObject {
 
   /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.io.File file)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create4(jni.JObject mediaType, jni.JObject file) =>
+  static RequestBody create4(MediaType mediaType, jni.JObject file) =>
       const $RequestBodyType()
           .fromRef(_create4(mediaType.reference, file.reference).object);
 }
@@ -2273,6 +2089,448 @@ extension $RequestBodyArray on jni.JArray<RequestBody> {
   }
 
   void operator []=(int index, RequestBody value) {
+    (this as jni.JArray<jni.JObject>)[index] = value;
+  }
+}
+
+/// from: okhttp3.MultipartBody
+class MultipartBody extends RequestBody {
+  late final jni.JObjType? _$type;
+  @override
+  jni.JObjType get $type => _$type ??= type;
+
+  MultipartBody.fromRef(
+    jni.JObjectPtr ref,
+  ) : super.fromRef(ref);
+
+  /// The type which includes information such as the signature of this class.
+  static const type = $MultipartBodyType();
+
+  static final _get_MIXED =
+      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+              "get_MultipartBody__MIXED")
+          .asFunction<jni.JniResult Function()>();
+
+  /// from: static public final okhttp3.MediaType MIXED
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get MIXED =>
+      const $MediaTypeType().fromRef(_get_MIXED().object);
+
+  static final _get_ALTERNATIVE =
+      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+              "get_MultipartBody__ALTERNATIVE")
+          .asFunction<jni.JniResult Function()>();
+
+  /// from: static public final okhttp3.MediaType ALTERNATIVE
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get ALTERNATIVE =>
+      const $MediaTypeType().fromRef(_get_ALTERNATIVE().object);
+
+  static final _get_DIGEST =
+      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+              "get_MultipartBody__DIGEST")
+          .asFunction<jni.JniResult Function()>();
+
+  /// from: static public final okhttp3.MediaType DIGEST
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get DIGEST =>
+      const $MediaTypeType().fromRef(_get_DIGEST().object);
+
+  static final _get_PARALLEL =
+      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+              "get_MultipartBody__PARALLEL")
+          .asFunction<jni.JniResult Function()>();
+
+  /// from: static public final okhttp3.MediaType PARALLEL
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get PARALLEL =>
+      const $MediaTypeType().fromRef(_get_PARALLEL().object);
+
+  static final _get_FORM =
+      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+              "get_MultipartBody__FORM")
+          .asFunction<jni.JniResult Function()>();
+
+  /// from: static public final okhttp3.MediaType FORM
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get FORM =>
+      const $MediaTypeType().fromRef(_get_FORM().object);
+
+  static final _boundary = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__boundary")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.lang.String boundary()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString boundary() =>
+      const jni.JStringType().fromRef(_boundary(reference).object);
+
+  static final _size = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__size")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public int size()
+  int size() => _size(reference).integer;
+
+  static final _parts = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__parts")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.util.List parts()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  List<jni.JObject> parts() =>
+      const $ListType(jni.JObjectType()).fromRef(_parts(reference).object);
+
+  static final _part0 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>, ffi.Int32)>>("MultipartBody__part0")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>, int)>();
+
+  /// from: public okhttp3.MultipartBody$Part part(int i)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject part0(int i) =>
+      const jni.JObjectType().fromRef(_part0(reference, i).object);
+
+  static final _contentType = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__contentType")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MediaType contentType()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MediaType contentType() =>
+      const $MediaTypeType().fromRef(_contentType(reference).object);
+
+  static final _contentLength = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__contentLength")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public long contentLength()
+  int contentLength() => _contentLength(reference).long;
+
+  static final _writeTo = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody__writeTo")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public void writeTo(okio.BufferedSink bufferedSink)
+  void writeTo(jni.JObject bufferedSink) =>
+      _writeTo(reference, bufferedSink.reference).check();
+}
+
+class $MultipartBodyType extends jni.JObjType<MultipartBody> {
+  const $MultipartBodyType();
+
+  @override
+  String get signature => r"Lokhttp3/MultipartBody;";
+
+  @override
+  MultipartBody fromRef(jni.JObjectPtr ref) => MultipartBody.fromRef(ref);
+}
+
+extension $MultipartBodyArray on jni.JArray<MultipartBody> {
+  MultipartBody operator [](int index) {
+    return (elementType as $MultipartBodyType)
+        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
+  }
+
+  void operator []=(int index, MultipartBody value) {
+    (this as jni.JArray<jni.JObject>)[index] = value;
+  }
+}
+
+/// from: okhttp3.MultipartBody$Builder
+class MultipartBody_Builder extends jni.JObject {
+  late final jni.JObjType? _$type;
+  @override
+  jni.JObjType get $type => _$type ??= type;
+
+  MultipartBody_Builder.fromRef(
+    jni.JObjectPtr ref,
+  ) : super.fromRef(ref);
+
+  /// The type which includes information such as the signature of this class.
+  static const type = $MultipartBody_BuilderType();
+
+  static final _ctor = jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
+          "MultipartBody_Builder__ctor")
+      .asFunction<jni.JniResult Function()>();
+
+  /// from: public void <init>()
+  MultipartBody_Builder() : super.fromRef(_ctor().object);
+
+  static final _ctor1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__ctor1")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public void <init>(java.lang.String string)
+  MultipartBody_Builder.ctor1(jni.JString string)
+      : super.fromRef(_ctor1(string.reference).object);
+
+  static final _setType = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__setType")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder setType(okhttp3.MediaType mediaType)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder setType(MediaType mediaType) =>
+      const $MultipartBody_BuilderType()
+          .fromRef(_setType(reference, mediaType.reference).object);
+
+  static final _addPart = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__addPart")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.RequestBody requestBody)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder addPart(RequestBody requestBody) =>
+      const $MultipartBody_BuilderType()
+          .fromRef(_addPart(reference, requestBody.reference).object);
+
+  static final _addPart1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__addPart1")
+      .asFunction<
+          jni.JniResult Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.Headers headers, okhttp3.RequestBody requestBody)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder addPart1(Headers headers, RequestBody requestBody) =>
+      const $MultipartBody_BuilderType().fromRef(
+          _addPart1(reference, headers.reference, requestBody.reference)
+              .object);
+
+  static final _addFormDataPart = jniLookup<
+              ffi.NativeFunction<
+                  jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                      ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+          "MultipartBody_Builder__addFormDataPart")
+      .asFunction<
+          jni.JniResult Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder addFormDataPart(
+          jni.JString string, jni.JString string1) =>
+      const $MultipartBody_BuilderType().fromRef(
+          _addFormDataPart(reference, string.reference, string1.reference)
+              .object);
+
+  static final _addFormDataPart1 = jniLookup<
+              ffi.NativeFunction<
+                  jni.JniResult Function(
+                      ffi.Pointer<ffi.Void>,
+                      ffi.Pointer<ffi.Void>,
+                      ffi.Pointer<ffi.Void>,
+                      ffi.Pointer<ffi.Void>)>>(
+          "MultipartBody_Builder__addFormDataPart1")
+      .asFunction<
+          jni.JniResult Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1, okhttp3.RequestBody requestBody)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder addFormDataPart1(
+          jni.JString string, jni.JString string1, RequestBody requestBody) =>
+      const $MultipartBody_BuilderType().fromRef(_addFormDataPart1(reference,
+              string.reference, string1.reference, requestBody.reference)
+          .object);
+
+  static final _addPart2 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__addPart2")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.MultipartBody$Part part)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder addPart2(jni.JObject part0) =>
+      const $MultipartBody_BuilderType()
+          .fromRef(_addPart2(reference, part0.reference).object);
+
+  static final _build = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MultipartBody_Builder__build")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public okhttp3.MultipartBody build()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody build() =>
+      const $MultipartBodyType().fromRef(_build(reference).object);
+}
+
+class $MultipartBody_BuilderType extends jni.JObjType<MultipartBody_Builder> {
+  const $MultipartBody_BuilderType();
+
+  @override
+  String get signature => r"Lokhttp3/MultipartBody$Builder;";
+
+  @override
+  MultipartBody_Builder fromRef(jni.JObjectPtr ref) =>
+      MultipartBody_Builder.fromRef(ref);
+}
+
+extension $MultipartBody_BuilderArray on jni.JArray<MultipartBody_Builder> {
+  MultipartBody_Builder operator [](int index) {
+    return (elementType as $MultipartBody_BuilderType)
+        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
+  }
+
+  void operator []=(int index, MultipartBody_Builder value) {
+    (this as jni.JArray<jni.JObject>)[index] = value;
+  }
+}
+
+/// from: okhttp3.MediaType
+class MediaType extends jni.JObject {
+  late final jni.JObjType? _$type;
+  @override
+  jni.JObjType get $type => _$type ??= type;
+
+  MediaType.fromRef(
+    jni.JObjectPtr ref,
+  ) : super.fromRef(ref);
+
+  /// The type which includes information such as the signature of this class.
+  static const type = $MediaTypeType();
+
+  static final _get0 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>)>>("MediaType__get0")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: static public okhttp3.MediaType get(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get0(jni.JString string) =>
+      const $MediaTypeType().fromRef(_get0(string.reference).object);
+
+  static final _parse = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MediaType__parse")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: static public okhttp3.MediaType parse(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType parse(jni.JString string) =>
+      const $MediaTypeType().fromRef(_parse(string.reference).object);
+
+  static final _subtype = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MediaType__subtype")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.lang.String subtype()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString subtype() =>
+      const jni.JStringType().fromRef(_subtype(reference).object);
+
+  static final _charset = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MediaType__charset")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.nio.charset.Charset charset()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject charset() =>
+      const jni.JObjectType().fromRef(_charset(reference).object);
+
+  static final _charset1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MediaType__charset1")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.nio.charset.Charset charset(java.nio.charset.Charset charset)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject charset1(jni.JObject charset) => const jni.JObjectType()
+      .fromRef(_charset1(reference, charset.reference).object);
+
+  static final _toString1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MediaType__toString1")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public java.lang.String toString()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString toString1() =>
+      const jni.JStringType().fromRef(_toString1(reference).object);
+
+  static final _equals1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>)>>("MediaType__equals1")
+      .asFunction<
+          jni.JniResult Function(
+              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
+
+  /// from: public boolean equals(java.lang.Object object)
+  bool equals1(jni.JObject object) =>
+      _equals1(reference, object.reference).boolean;
+
+  static final _hashCode1 = jniLookup<
+          ffi.NativeFunction<
+              jni.JniResult Function(
+                  ffi.Pointer<ffi.Void>)>>("MediaType__hashCode1")
+      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
+
+  /// from: public int hashCode()
+  int hashCode1() => _hashCode1(reference).integer;
+}
+
+class $MediaTypeType extends jni.JObjType<MediaType> {
+  const $MediaTypeType();
+
+  @override
+  String get signature => r"Lokhttp3/MediaType;";
+
+  @override
+  MediaType fromRef(jni.JObjectPtr ref) => MediaType.fromRef(ref);
+}
+
+extension $MediaTypeArray on jni.JArray<MediaType> {
+  MediaType operator [](int index) {
+    return (elementType as $MediaTypeType)
+        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
+  }
+
+  void operator []=(int index, MediaType value) {
     (this as jni.JArray<jni.JObject>)[index] = value;
   }
 }
@@ -2508,8 +2766,8 @@ class Response extends jni.JObject {
 
   /// from: public okhttp3.CacheControl cacheControl()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  CacheControl cacheControl() =>
-      const $CacheControlType().fromRef(_cacheControl(reference).object);
+  jni.JObject cacheControl() =>
+      const jni.JObjectType().fromRef(_cacheControl(reference).object);
 
   static final _sentRequestAtMillis = jniLookup<
           ffi.NativeFunction<
@@ -2598,8 +2856,8 @@ class ResponseBody extends jni.JObject {
 
   /// from: public abstract okhttp3.MediaType contentType()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject contentType() =>
-      const jni.JObjectType().fromRef(_contentType(reference).object);
+  MediaType contentType() =>
+      const $MediaTypeType().fromRef(_contentType(reference).object);
 
   static final _contentLength = jniLookup<
           ffi.NativeFunction<
@@ -2684,7 +2942,7 @@ class ResponseBody extends jni.JObject {
 
   /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create(jni.JObject mediaType, jni.JString string) =>
+  static ResponseBody create(MediaType mediaType, jni.JString string) =>
       const $ResponseBodyType()
           .fromRef(_create(mediaType.reference, string.reference).object);
 
@@ -2698,8 +2956,7 @@ class ResponseBody extends jni.JObject {
 
   /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, byte[] bs)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create1(
-          jni.JObject mediaType, jni.JArray<jni.JByte> bs) =>
+  static ResponseBody create1(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
       const $ResponseBodyType()
           .fromRef(_create1(mediaType.reference, bs.reference).object);
 
@@ -2713,7 +2970,7 @@ class ResponseBody extends jni.JObject {
 
   /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create2(jni.JObject mediaType, jni.JObject byteString) =>
+  static ResponseBody create2(MediaType mediaType, jni.JObject byteString) =>
       const $ResponseBodyType()
           .fromRef(_create2(mediaType.reference, byteString.reference).object);
 
@@ -2728,7 +2985,7 @@ class ResponseBody extends jni.JObject {
   /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, long j, okio.BufferedSource bufferedSource)
   /// The returned object must be deleted after use, by calling the `delete` method.
   static ResponseBody create3(
-          jni.JObject mediaType, int j, jni.JObject bufferedSource) =>
+          MediaType mediaType, int j, jni.JObject bufferedSource) =>
       const $ResponseBodyType().fromRef(
           _create3(mediaType.reference, j, bufferedSource.reference).object);
 }
@@ -2750,212 +3007,6 @@ extension $ResponseBodyArray on jni.JArray<ResponseBody> {
   }
 
   void operator []=(int index, ResponseBody value) {
-    (this as jni.JArray<jni.JObject>)[index] = value;
-  }
-}
-
-/// from: okhttp3.Interceptor
-class Interceptor extends jni.JObject {
-  late final jni.JObjType? _$type;
-  @override
-  jni.JObjType get $type => _$type ??= type;
-
-  Interceptor.fromRef(
-    jni.JObjectPtr ref,
-  ) : super.fromRef(ref);
-
-  /// The type which includes information such as the signature of this class.
-  static const type = $InterceptorType();
-
-  static final _intercept = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(ffi.Pointer<ffi.Void>,
-                  ffi.Pointer<ffi.Void>)>>("Interceptor__intercept")
-      .asFunction<
-          jni.JniResult Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
-
-  /// from: public abstract okhttp3.Response intercept(okhttp3.Interceptor$Chain chain)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Response intercept(jni.JObject chain) => const $ResponseType()
-      .fromRef(_intercept(reference, chain.reference).object);
-}
-
-class $InterceptorType extends jni.JObjType<Interceptor> {
-  const $InterceptorType();
-
-  @override
-  String get signature => r"Lokhttp3/Interceptor;";
-
-  @override
-  Interceptor fromRef(jni.JObjectPtr ref) => Interceptor.fromRef(ref);
-}
-
-extension $InterceptorArray on jni.JArray<Interceptor> {
-  Interceptor operator [](int index) {
-    return (elementType as $InterceptorType)
-        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
-  }
-
-  void operator []=(int index, Interceptor value) {
-    (this as jni.JArray<jni.JObject>)[index] = value;
-  }
-}
-
-/// from: okio.Timeout
-class Timeout extends jni.JObject {
-  late final jni.JObjType? _$type;
-  @override
-  jni.JObjType get $type => _$type ??= type;
-
-  Timeout.fromRef(
-    jni.JObjectPtr ref,
-  ) : super.fromRef(ref);
-
-  /// The type which includes information such as the signature of this class.
-  static const type = $TimeoutType();
-
-  static final _get_NONE =
-      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>(
-              "get_Timeout__NONE")
-          .asFunction<jni.JniResult Function()>();
-
-  /// from: static public final okio.Timeout NONE
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  static Timeout get NONE => const $TimeoutType().fromRef(_get_NONE().object);
-
-  static final _ctor =
-      jniLookup<ffi.NativeFunction<jni.JniResult Function()>>("Timeout__ctor")
-          .asFunction<jni.JniResult Function()>();
-
-  /// from: public void <init>()
-  Timeout() : super.fromRef(_ctor().object);
-
-  static final _timeout = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(ffi.Pointer<ffi.Void>, ffi.Int64,
-                  ffi.Pointer<ffi.Void>)>>("Timeout__timeout")
-      .asFunction<
-          jni.JniResult Function(
-              ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
-
-  /// from: public okio.Timeout timeout(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout timeout(int j, TimeUnit timeUnit) => const $TimeoutType()
-      .fromRef(_timeout(reference, j, timeUnit.reference).object);
-
-  static final _timeoutNanos = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__timeoutNanos")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public long timeoutNanos()
-  int timeoutNanos() => _timeoutNanos(reference).long;
-
-  static final _hasDeadline = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__hasDeadline")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public boolean hasDeadline()
-  bool hasDeadline() => _hasDeadline(reference).boolean;
-
-  static final _deadlineNanoTime = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__deadlineNanoTime")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public long deadlineNanoTime()
-  int deadlineNanoTime() => _deadlineNanoTime(reference).long;
-
-  static final _deadlineNanoTime1 = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(ffi.Pointer<ffi.Void>,
-                  ffi.Int64)>>("Timeout__deadlineNanoTime1")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>, int)>();
-
-  /// from: public okio.Timeout deadlineNanoTime(long j)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout deadlineNanoTime1(int j) =>
-      const $TimeoutType().fromRef(_deadlineNanoTime1(reference, j).object);
-
-  static final _deadline = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(ffi.Pointer<ffi.Void>, ffi.Int64,
-                  ffi.Pointer<ffi.Void>)>>("Timeout__deadline")
-      .asFunction<
-          jni.JniResult Function(
-              ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>)>();
-
-  /// from: public final okio.Timeout deadline(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout deadline(int j, TimeUnit timeUnit) => const $TimeoutType()
-      .fromRef(_deadline(reference, j, timeUnit.reference).object);
-
-  static final _clearTimeout = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__clearTimeout")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public okio.Timeout clearTimeout()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout clearTimeout() =>
-      const $TimeoutType().fromRef(_clearTimeout(reference).object);
-
-  static final _clearDeadline = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__clearDeadline")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public okio.Timeout clearDeadline()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Timeout clearDeadline() =>
-      const $TimeoutType().fromRef(_clearDeadline(reference).object);
-
-  static final _throwIfReached = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(
-                  ffi.Pointer<ffi.Void>)>>("Timeout__throwIfReached")
-      .asFunction<jni.JniResult Function(ffi.Pointer<ffi.Void>)>();
-
-  /// from: public void throwIfReached()
-  void throwIfReached() => _throwIfReached(reference).check();
-
-  static final _waitUntilNotified = jniLookup<
-          ffi.NativeFunction<
-              jni.JniResult Function(ffi.Pointer<ffi.Void>,
-                  ffi.Pointer<ffi.Void>)>>("Timeout__waitUntilNotified")
-      .asFunction<
-          jni.JniResult Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>();
-
-  /// from: public final void waitUntilNotified(java.lang.Object object)
-  void waitUntilNotified(jni.JObject object) =>
-      _waitUntilNotified(reference, object.reference).check();
-}
-
-class $TimeoutType extends jni.JObjType<Timeout> {
-  const $TimeoutType();
-
-  @override
-  String get signature => r"Lokio/Timeout;";
-
-  @override
-  Timeout fromRef(jni.JObjectPtr ref) => Timeout.fromRef(ref);
-}
-
-extension $TimeoutArray on jni.JArray<Timeout> {
-  Timeout operator [](int index) {
-    return (elementType as $TimeoutType)
-        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
-  }
-
-  void operator []=(int index, Timeout value) {
     (this as jni.JArray<jni.JObject>)[index] = value;
   }
 }

@@ -1383,217 +1383,6 @@ JniResult Headers_Builder__build(jobject self_) {
         return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
 }
 
-// okhttp3.CacheControl
-jclass _c_CacheControl = NULL;
-
-jmethodID _m_CacheControl__noCache = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__noCache(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__noCache, "noCache", "()Z");
-    if (_m_CacheControl__noCache == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__noCache);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__noStore = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__noStore(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__noStore, "noStore", "()Z");
-    if (_m_CacheControl__noStore == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__noStore);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__maxAgeSeconds = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__maxAgeSeconds(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__maxAgeSeconds, "maxAgeSeconds", "()I");
-    if (_m_CacheControl__maxAgeSeconds == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_CacheControl__maxAgeSeconds);
-        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__sMaxAgeSeconds = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__sMaxAgeSeconds(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__sMaxAgeSeconds, "sMaxAgeSeconds", "()I");
-    if (_m_CacheControl__sMaxAgeSeconds == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_CacheControl__sMaxAgeSeconds);
-        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__isPrivate = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__isPrivate(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__isPrivate, "isPrivate", "()Z");
-    if (_m_CacheControl__isPrivate == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__isPrivate);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__isPublic = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__isPublic(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__isPublic, "isPublic", "()Z");
-    if (_m_CacheControl__isPublic == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__isPublic);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__mustRevalidate = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__mustRevalidate(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__mustRevalidate, "mustRevalidate", "()Z");
-    if (_m_CacheControl__mustRevalidate == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__mustRevalidate);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__maxStaleSeconds = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__maxStaleSeconds(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__maxStaleSeconds, "maxStaleSeconds", "()I");
-    if (_m_CacheControl__maxStaleSeconds == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_CacheControl__maxStaleSeconds);
-        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__minFreshSeconds = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__minFreshSeconds(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__minFreshSeconds, "minFreshSeconds", "()I");
-    if (_m_CacheControl__minFreshSeconds == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_CacheControl__minFreshSeconds);
-        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__onlyIfCached = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__onlyIfCached(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__onlyIfCached, "onlyIfCached", "()Z");
-    if (_m_CacheControl__onlyIfCached == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__onlyIfCached);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__noTransform = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__noTransform(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__noTransform, "noTransform", "()Z");
-    if (_m_CacheControl__noTransform == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__noTransform);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__immutable = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__immutable(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__immutable, "immutable", "()Z");
-    if (_m_CacheControl__immutable == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_CacheControl__immutable);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__parse = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__parse(jobject headers) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_static_method(_c_CacheControl,
-      &_m_CacheControl__parse, "parse", "(Lokhttp3/Headers;)Lokhttp3/CacheControl;");
-    if (_m_CacheControl__parse == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallStaticObjectMethod(jniEnv, _c_CacheControl, _m_CacheControl__parse, headers);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_CacheControl__toString1 = NULL;
-FFI_PLUGIN_EXPORT
-JniResult CacheControl__toString1(jobject self_) {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_CacheControl,
-      &_m_CacheControl__toString1, "toString", "()Ljava/lang/String;");
-    if (_m_CacheControl__toString1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_CacheControl__toString1);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jfieldID _f_CacheControl__FORCE_NETWORK = NULL;
-FFI_PLUGIN_EXPORT
-JniResult get_CacheControl__FORCE_NETWORK() {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_static_field(_c_CacheControl, &_f_CacheControl__FORCE_NETWORK, "FORCE_NETWORK",
-      "Lokhttp3/CacheControl;");
-    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_CacheControl, _f_CacheControl__FORCE_NETWORK));
-    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
-}
-
-
-jfieldID _f_CacheControl__FORCE_CACHE = NULL;
-FFI_PLUGIN_EXPORT
-JniResult get_CacheControl__FORCE_CACHE() {
-        load_env();
-        load_class_gr(&_c_CacheControl, "okhttp3/CacheControl");
-    if (_c_CacheControl == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_static_field(_c_CacheControl, &_f_CacheControl__FORCE_CACHE, "FORCE_CACHE",
-      "Lokhttp3/CacheControl;");
-    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_CacheControl, _f_CacheControl__FORCE_CACHE));
-    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
-}
-
-
 // okhttp3.Request
 jclass _c_Request = NULL;
 
@@ -2162,6 +1951,392 @@ JniResult RequestBody__create4(jobject mediaType, jobject file) {
         return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
 }
 
+// okhttp3.MultipartBody
+jclass _c_MultipartBody = NULL;
+
+jmethodID _m_MultipartBody__boundary = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__boundary(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__boundary, "boundary", "()Ljava/lang/String;");
+    if (_m_MultipartBody__boundary == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody__boundary);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__size = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__size(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__size, "size", "()I");
+    if (_m_MultipartBody__size == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_MultipartBody__size);
+        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__parts = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__parts(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__parts, "parts", "()Ljava/util/List;");
+    if (_m_MultipartBody__parts == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody__parts);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__part0 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__part0(jobject self_, int32_t i) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__part0, "part", "(I)Lokhttp3/MultipartBody$Part;");
+    if (_m_MultipartBody__part0 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody__part0, i);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__contentType = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__contentType(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__contentType, "contentType", "()Lokhttp3/MediaType;");
+    if (_m_MultipartBody__contentType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody__contentType);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__contentLength = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__contentLength(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__contentLength, "contentLength", "()J");
+    if (_m_MultipartBody__contentLength == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    int64_t _result = (*jniEnv)->CallLongMethod(jniEnv, self_, _m_MultipartBody__contentLength);
+        return (JniResult){.result = {.j = _result}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody__writeTo = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody__writeTo(jobject self_, jobject bufferedSink) {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody,
+      &_m_MultipartBody__writeTo, "writeTo", "(Lokio/BufferedSink;)V");
+    if (_m_MultipartBody__writeTo == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    (*jniEnv)->CallVoidMethod(jniEnv, self_, _m_MultipartBody__writeTo, bufferedSink);
+        return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+}
+
+jfieldID _f_MultipartBody__MIXED = NULL;
+FFI_PLUGIN_EXPORT
+JniResult get_MultipartBody__MIXED() {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_field(_c_MultipartBody, &_f_MultipartBody__MIXED, "MIXED",
+      "Lokhttp3/MediaType;");
+    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_MultipartBody, _f_MultipartBody__MIXED));
+    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
+}
+
+
+jfieldID _f_MultipartBody__ALTERNATIVE = NULL;
+FFI_PLUGIN_EXPORT
+JniResult get_MultipartBody__ALTERNATIVE() {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_field(_c_MultipartBody, &_f_MultipartBody__ALTERNATIVE, "ALTERNATIVE",
+      "Lokhttp3/MediaType;");
+    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_MultipartBody, _f_MultipartBody__ALTERNATIVE));
+    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
+}
+
+
+jfieldID _f_MultipartBody__DIGEST = NULL;
+FFI_PLUGIN_EXPORT
+JniResult get_MultipartBody__DIGEST() {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_field(_c_MultipartBody, &_f_MultipartBody__DIGEST, "DIGEST",
+      "Lokhttp3/MediaType;");
+    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_MultipartBody, _f_MultipartBody__DIGEST));
+    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
+}
+
+
+jfieldID _f_MultipartBody__PARALLEL = NULL;
+FFI_PLUGIN_EXPORT
+JniResult get_MultipartBody__PARALLEL() {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_field(_c_MultipartBody, &_f_MultipartBody__PARALLEL, "PARALLEL",
+      "Lokhttp3/MediaType;");
+    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_MultipartBody, _f_MultipartBody__PARALLEL));
+    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
+}
+
+
+jfieldID _f_MultipartBody__FORM = NULL;
+FFI_PLUGIN_EXPORT
+JniResult get_MultipartBody__FORM() {
+        load_env();
+        load_class_gr(&_c_MultipartBody, "okhttp3/MultipartBody");
+    if (_c_MultipartBody == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_field(_c_MultipartBody, &_f_MultipartBody__FORM, "FORM",
+      "Lokhttp3/MediaType;");
+    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_MultipartBody, _f_MultipartBody__FORM));
+    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
+}
+
+
+// okhttp3.MultipartBody$Builder
+jclass _c_MultipartBody_Builder = NULL;
+
+jmethodID _m_MultipartBody_Builder__ctor = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__ctor() {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__ctor, "<init>", "()V");
+    if (_m_MultipartBody_Builder__ctor == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->NewObject(jniEnv, _c_MultipartBody_Builder, _m_MultipartBody_Builder__ctor);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__ctor1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__ctor1(jobject string) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__ctor1, "<init>", "(Ljava/lang/String;)V");
+    if (_m_MultipartBody_Builder__ctor1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->NewObject(jniEnv, _c_MultipartBody_Builder, _m_MultipartBody_Builder__ctor1, string);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__setType = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__setType(jobject self_, jobject mediaType) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__setType, "setType", "(Lokhttp3/MediaType;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__setType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__setType, mediaType);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__addPart = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__addPart(jobject self_, jobject requestBody) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__addPart, "addPart", "(Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__addPart == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__addPart, requestBody);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__addPart1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__addPart1(jobject self_, jobject headers, jobject requestBody) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__addPart1, "addPart", "(Lokhttp3/Headers;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__addPart1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__addPart1, headers, requestBody);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__addFormDataPart = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__addFormDataPart(jobject self_, jobject string, jobject string1) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__addFormDataPart, "addFormDataPart", "(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__addFormDataPart == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__addFormDataPart, string, string1);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__addFormDataPart1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__addFormDataPart1(jobject self_, jobject string, jobject string1, jobject requestBody) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__addFormDataPart1, "addFormDataPart", "(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__addFormDataPart1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__addFormDataPart1, string, string1, requestBody);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__addPart2 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__addPart2(jobject self_, jobject part) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__addPart2, "addPart", "(Lokhttp3/MultipartBody$Part;)Lokhttp3/MultipartBody$Builder;");
+    if (_m_MultipartBody_Builder__addPart2 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__addPart2, part);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MultipartBody_Builder__build = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MultipartBody_Builder__build(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MultipartBody_Builder, "okhttp3/MultipartBody$Builder");
+    if (_c_MultipartBody_Builder == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MultipartBody_Builder,
+      &_m_MultipartBody_Builder__build, "build", "()Lokhttp3/MultipartBody;");
+    if (_m_MultipartBody_Builder__build == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MultipartBody_Builder__build);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+// okhttp3.MediaType
+jclass _c_MediaType = NULL;
+
+jmethodID _m_MediaType__get0 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__get0(jobject string) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_method(_c_MediaType,
+      &_m_MediaType__get0, "get", "(Ljava/lang/String;)Lokhttp3/MediaType;");
+    if (_m_MediaType__get0 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallStaticObjectMethod(jniEnv, _c_MediaType, _m_MediaType__get0, string);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__parse = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__parse(jobject string) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_static_method(_c_MediaType,
+      &_m_MediaType__parse, "parse", "(Ljava/lang/String;)Lokhttp3/MediaType;");
+    if (_m_MediaType__parse == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallStaticObjectMethod(jniEnv, _c_MediaType, _m_MediaType__parse, string);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__subtype = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__subtype(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__subtype, "subtype", "()Ljava/lang/String;");
+    if (_m_MediaType__subtype == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MediaType__subtype);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__charset = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__charset(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__charset, "charset", "()Ljava/nio/charset/Charset;");
+    if (_m_MediaType__charset == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MediaType__charset);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__charset1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__charset1(jobject self_, jobject charset) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__charset1, "charset", "(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;");
+    if (_m_MediaType__charset1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MediaType__charset1, charset);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__toString1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__toString1(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__toString1, "toString", "()Ljava/lang/String;");
+    if (_m_MediaType__toString1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_MediaType__toString1);
+        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__equals1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__equals1(jobject self_, jobject object) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__equals1, "equals", "(Ljava/lang/Object;)Z");
+    if (_m_MediaType__equals1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_MediaType__equals1, object);
+        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
+}
+
+jmethodID _m_MediaType__hashCode1 = NULL;
+FFI_PLUGIN_EXPORT
+JniResult MediaType__hashCode1(jobject self_) {
+        load_env();
+        load_class_gr(&_c_MediaType, "okhttp3/MediaType");
+    if (_c_MediaType == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    load_method(_c_MediaType,
+      &_m_MediaType__hashCode1, "hashCode", "()I");
+    if (_m_MediaType__hashCode1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
+    int32_t _result = (*jniEnv)->CallIntMethod(jniEnv, self_, _m_MediaType__hashCode1);
+        return (JniResult){.result = {.i = _result}, .exception = check_exception()};
+}
+
 // okhttp3.Response
 jclass _c_Response = NULL;
 
@@ -2648,181 +2823,6 @@ JniResult ResponseBody__create3(jobject mediaType, int64_t j, jobject bufferedSo
     jobject _result = (*jniEnv)->CallStaticObjectMethod(jniEnv, _c_ResponseBody, _m_ResponseBody__create3, mediaType, j, bufferedSource);
         return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
 }
-
-// okhttp3.Interceptor
-jclass _c_Interceptor = NULL;
-
-jmethodID _m_Interceptor__intercept = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Interceptor__intercept(jobject self_, jobject chain) {
-        load_env();
-        load_class_gr(&_c_Interceptor, "okhttp3/Interceptor");
-    if (_c_Interceptor == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Interceptor,
-      &_m_Interceptor__intercept, "intercept", "(Lokhttp3/Interceptor$Chain;)Lokhttp3/Response;");
-    if (_m_Interceptor__intercept == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Interceptor__intercept, chain);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-// okio.Timeout
-jclass _c_Timeout = NULL;
-
-jmethodID _m_Timeout__ctor = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__ctor() {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__ctor, "<init>", "()V");
-    if (_m_Timeout__ctor == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->NewObject(jniEnv, _c_Timeout, _m_Timeout__ctor);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__timeout = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__timeout(jobject self_, int64_t j, jobject timeUnit) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__timeout, "timeout", "(JLjava/util/concurrent/TimeUnit;)Lokio/Timeout;");
-    if (_m_Timeout__timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Timeout__timeout, j, timeUnit);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__timeoutNanos = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__timeoutNanos(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__timeoutNanos, "timeoutNanos", "()J");
-    if (_m_Timeout__timeoutNanos == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int64_t _result = (*jniEnv)->CallLongMethod(jniEnv, self_, _m_Timeout__timeoutNanos);
-        return (JniResult){.result = {.j = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__hasDeadline = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__hasDeadline(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__hasDeadline, "hasDeadline", "()Z");
-    if (_m_Timeout__hasDeadline == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    uint8_t _result = (*jniEnv)->CallBooleanMethod(jniEnv, self_, _m_Timeout__hasDeadline);
-        return (JniResult){.result = {.z = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__deadlineNanoTime = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__deadlineNanoTime(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__deadlineNanoTime, "deadlineNanoTime", "()J");
-    if (_m_Timeout__deadlineNanoTime == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    int64_t _result = (*jniEnv)->CallLongMethod(jniEnv, self_, _m_Timeout__deadlineNanoTime);
-        return (JniResult){.result = {.j = _result}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__deadlineNanoTime1 = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__deadlineNanoTime1(jobject self_, int64_t j) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__deadlineNanoTime1, "deadlineNanoTime", "(J)Lokio/Timeout;");
-    if (_m_Timeout__deadlineNanoTime1 == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Timeout__deadlineNanoTime1, j);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__deadline = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__deadline(jobject self_, int64_t j, jobject timeUnit) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__deadline, "deadline", "(JLjava/util/concurrent/TimeUnit;)Lokio/Timeout;");
-    if (_m_Timeout__deadline == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Timeout__deadline, j, timeUnit);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__clearTimeout = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__clearTimeout(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__clearTimeout, "clearTimeout", "()Lokio/Timeout;");
-    if (_m_Timeout__clearTimeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Timeout__clearTimeout);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__clearDeadline = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__clearDeadline(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__clearDeadline, "clearDeadline", "()Lokio/Timeout;");
-    if (_m_Timeout__clearDeadline == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    jobject _result = (*jniEnv)->CallObjectMethod(jniEnv, self_, _m_Timeout__clearDeadline);
-        return (JniResult){.result = {.l = to_global_ref(_result)}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__throwIfReached = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__throwIfReached(jobject self_) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__throwIfReached, "throwIfReached", "()V");
-    if (_m_Timeout__throwIfReached == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    (*jniEnv)->CallVoidMethod(jniEnv, self_, _m_Timeout__throwIfReached);
-        return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-}
-
-jmethodID _m_Timeout__waitUntilNotified = NULL;
-FFI_PLUGIN_EXPORT
-JniResult Timeout__waitUntilNotified(jobject self_, jobject object) {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_method(_c_Timeout,
-      &_m_Timeout__waitUntilNotified, "waitUntilNotified", "(Ljava/lang/Object;)V");
-    if (_m_Timeout__waitUntilNotified == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    (*jniEnv)->CallVoidMethod(jniEnv, self_, _m_Timeout__waitUntilNotified, object);
-        return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-}
-
-jfieldID _f_Timeout__NONE = NULL;
-FFI_PLUGIN_EXPORT
-JniResult get_Timeout__NONE() {
-        load_env();
-        load_class_gr(&_c_Timeout, "okio/Timeout");
-    if (_c_Timeout == NULL) return (JniResult){.result = {.j = 0}, .exception = check_exception()};
-    load_static_field(_c_Timeout, &_f_Timeout__NONE, "NONE",
-      "Lokio/Timeout;");
-    jobject _result = to_global_ref((*jniEnv)->GetStaticObjectField(jniEnv, _c_Timeout, _f_Timeout__NONE));
-    return (JniResult){.result = {.l = _result}, .exception = check_exception()};
-}
-
 
 // java.util.List
 jclass _c_List = NULL;

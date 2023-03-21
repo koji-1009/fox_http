@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fox_http/fox_http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  var text = 'no data';
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,24 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: const Center(
-          child: Text('Running on: \n'),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Text(text),
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () async {
+            final response = await http.get(
+              Uri.parse('https://httpbin.org/get'),
+              headers: {
+                'accept': 'application/json',
+              }
+            );
+
+            setState(() {
+              text = response.body;
+            });
+          },
+          label: const Text('fetch'),
         ),
       ),
     );

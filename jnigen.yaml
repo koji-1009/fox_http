@@ -7,17 +7,22 @@ summarizer:
 
 suspend_fun_to_async: true
 
+exclude:
+  methods:
+    - 'okhttp3.MultipartBody#type'
+    - 'okhttp3.MediaType#type'
+
 output:
   c:
     library_name: fox_http
     path: src/fox_http/
   dart:
-    path: lib/okhttp3.dart
+    path: lib/src/okhttp3.dart
     structure: single_file
 
 class_path:
-  - 'okio-1.17.2.jar'
-  - 'okhttp-3.14.9.jar'
+  - 'jar/okio-1.17.2.jar'
+  - 'jar/okhttp-3.14.9.jar'
 classes:
   # main client
   - 'okhttp3.OkHttpClient'
@@ -26,17 +31,16 @@ classes:
   - 'okhttp3.Call'
   - 'okhttp3.Headers'
   - 'okhttp3.Headers$Builder'
-  - 'okhttp3.CacheControl'
   - 'okhttp3.Request'
   - 'okhttp3.Request$Builder'
   - 'okhttp3.RequestBody'
+  - 'okhttp3.MultipartBody'
+  - 'okhttp3.MultipartBody$Builder'
+  - 'okhttp3.MediaType'
   # response
   - 'okhttp3.Response'
   - 'okhttp3.ResponseBody'
-  # option
-  - 'okhttp3.Interceptor'
   # util
-  - 'okio.Timeout'
   - 'java.util.List'
   - 'java.util.Map'
   - 'java.util.Set'
