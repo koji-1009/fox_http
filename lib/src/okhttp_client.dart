@@ -170,7 +170,7 @@ class _Client {
 
   _Client._internal();
 
-  final okhttp3.OkHttpClient client = okhttp3.OkHttpClient_Builder().build();
+  final client = okhttp3.OkHttpClient_Builder().build();
 }
 
 enum _HttpMethod {

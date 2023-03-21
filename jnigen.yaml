@@ -23,6 +23,7 @@ output:
 class_path:
   - 'jar/okio-1.17.2.jar'
   - 'jar/okhttp-3.14.9.jar'
+
 classes:
   # main client
   - 'okhttp3.OkHttpClient'
@@ -40,9 +41,3 @@ classes:
   # response
   - 'okhttp3.Response'
   - 'okhttp3.ResponseBody'
-  # util
-  - 'java.util.List'
-  - 'java.util.Map'
-  - 'java.util.Set'
-  - 'java.util.Date'
-  - 'java.util.concurrent.TimeUnit'
