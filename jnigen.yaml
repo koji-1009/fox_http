@@ -9,8 +9,65 @@ suspend_fun_to_async: true
 
 exclude:
   methods:
+    - 'okhttp3.OkHttpClient#-deprecated_dispatcher'
+    - 'okhttp3.OkHttpClient#-deprecated_connectionPool'
+    - 'okhttp3.OkHttpClient#-deprecated_interceptors'
+    - 'okhttp3.OkHttpClient#-deprecated_networkInterceptors'
+    - 'okhttp3.OkHttpClient#-deprecated_eventListenerFactory'
+    - 'okhttp3.OkHttpClient#-deprecated_retryOnConnectionFailure'
+    - 'okhttp3.OkHttpClient#-deprecated_authenticator'
+    - 'okhttp3.OkHttpClient#-deprecated_followRedirects'
+    - 'okhttp3.OkHttpClient#-deprecated_followSslRedirects'
+    - 'okhttp3.OkHttpClient#-deprecated_cookieJar'
+    - 'okhttp3.OkHttpClient#-deprecated_cache'
+    - 'okhttp3.OkHttpClient#-deprecated_dns'
+    - 'okhttp3.OkHttpClient#-deprecated_proxy'
+    - 'okhttp3.OkHttpClient#-deprecated_proxySelector'
+    - 'okhttp3.OkHttpClient#-deprecated_proxyAuthenticator'
+    - 'okhttp3.OkHttpClient#-deprecated_socketFactory'
+    - 'okhttp3.OkHttpClient#-deprecated_sslSocketFactory'
+    - 'okhttp3.OkHttpClient#-deprecated_connectionSpecs'
+    - 'okhttp3.OkHttpClient#-deprecated_protocols'
+    - 'okhttp3.OkHttpClient#-deprecated_hostnameVerifier'
+    - 'okhttp3.OkHttpClient#-deprecated_certificatePinner'
+    - 'okhttp3.OkHttpClient#-deprecated_callTimeoutMillis'
+    - 'okhttp3.OkHttpClient#-deprecated_connectTimeoutMillis'
+    - 'okhttp3.OkHttpClient#-deprecated_readTimeoutMillis'
+    - 'okhttp3.OkHttpClient#-deprecated_writeTimeoutMillis'
+    - 'okhttp3.OkHttpClient#-deprecated_pingIntervalMillis'
+    - 'okhttp3.OkHttpClient.Builder#-addInterceptor'
+    - 'okhttp3.OkHttpClient.Builder#-addNetworkInterceptor'
+    - 'okhttp3.Headers#-deprecated_size'
+    - 'okhttp3.Request#-deprecated_url'
+    - 'okhttp3.Request#-deprecated_method'
+    - 'okhttp3.Request#-deprecated_headers'
+    - 'okhttp3.Request#-deprecated_body'
+    - 'okhttp3.Request#-deprecated_cacheControl'
+    - 'okhttp3.Request#-deprecated_body'
+    - 'okhttp3.Request#-deprecated_body'
+    - 'okhttp3.Request#-deprecated_body'
     - 'okhttp3.MultipartBody#type'
+    - 'okhttp3.MultipartBody#-deprecated_type'
+    - 'okhttp3.MultipartBody#-deprecated_boundary'
+    - 'okhttp3.MultipartBody#-deprecated_size'
+    - 'okhttp3.MultipartBody#-deprecated_parts'
     - 'okhttp3.MediaType#type'
+    - 'okhttp3.MediaType#-deprecated_type'
+    - 'okhttp3.MediaType#-deprecated_subtype'
+    - 'okhttp3.Response#-deprecated_request'
+    - 'okhttp3.Response#-deprecated_protocol'
+    - 'okhttp3.Response#-deprecated_code'
+    - 'okhttp3.Response#-deprecated_message'
+    - 'okhttp3.Response#-deprecated_handshake'
+    - 'okhttp3.Response#-deprecated_headers'
+    - 'okhttp3.Response#-deprecated_body'
+    - 'okhttp3.Response#-deprecated_networkResponse'
+    - 'okhttp3.Response#-deprecated_cacheResponse'
+    - 'okhttp3.Response#-deprecated_priorResponse'
+    - 'okhttp3.Response#-deprecated_networkResponse'
+    - 'okhttp3.Response#-deprecated_cacheControl'
+    - 'okhttp3.Response#-deprecated_sentRequestAtMillis'
+    - 'okhttp3.Response#-deprecated_receivedResponseAtMillis'
 
 output:
   c:
@@ -22,8 +79,8 @@ output:
   bindings_type: dart_only
 
 class_path:
-  - 'jar/okio-1.17.2.jar'
-  - 'jar/okhttp-3.14.9.jar'
+  - 'jar/okio-3.0.0.jar'
+  - 'jar/okhttp-4.10.0.jar'
 
 classes:
   # main client
@@ -42,3 +99,5 @@ classes:
   # response
   - 'okhttp3.Response'
   - 'okhttp3.ResponseBody'
+  # util
+  - 'java.util.UUID'
