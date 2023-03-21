@@ -19,6 +19,7 @@ output:
   dart:
     path: lib/src/okhttp3.dart
     structure: single_file
+  bindings_type: dart_only
 
 class_path:
   - 'jar/okio-1.17.2.jar'
