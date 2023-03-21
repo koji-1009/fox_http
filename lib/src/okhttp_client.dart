@@ -51,8 +51,8 @@ StreamedResponse _execute(
       case _HttpMethod.delete:
         if (httpRequest.body.isNotEmpty) {
           final body = okhttp3.RequestBody.create(
-            okhttp3.MediaType.parse('application/json'.toJString()),
             httpRequest.body.toJString(),
+            okhttp3.MediaType.parse('application/json'.toJString()),
           );
           okHttpRequest = requestBuilder.delete1(body).build();
         } else {
@@ -67,29 +67,31 @@ StreamedResponse _execute(
         break;
       case _HttpMethod.patch:
         final body = okhttp3.RequestBody.create(
-          okhttp3.MediaType.parse('application/json'.toJString()),
           httpRequest.body.toJString(),
+          okhttp3.MediaType.parse('application/json'.toJString()),
         );
         okHttpRequest = requestBuilder.patch(body).build();
         break;
       case _HttpMethod.post:
         final body = okhttp3.RequestBody.create(
-          okhttp3.MediaType.parse('application/json'.toJString()),
           httpRequest.body.toJString(),
+          okhttp3.MediaType.parse('application/json'.toJString()),
         );
         okHttpRequest = requestBuilder.post(body).build();
         break;
       case _HttpMethod.put:
         final body = okhttp3.RequestBody.create(
-          okhttp3.MediaType.parse('application/json'.toJString()),
           httpRequest.body.toJString(),
+          okhttp3.MediaType.parse('application/json'.toJString()),
         );
         okHttpRequest = requestBuilder.put(body).build();
         break;
     }
   } else if (httpRequest is MultipartRequest) {
     /// TODO: implementation
-    final bodyBuilder = okhttp3.MultipartBody_Builder();
+    final bodyBuilder = okhttp3.MultipartBody_Builder(
+      okhttp3.UUID.randomUUID().toString1(),
+    );
     final body = bodyBuilder.build();
     bodyBuilder.delete();
 
@@ -125,7 +127,7 @@ StreamedResponse _execute(
   }
 
   final headers = <String, String>{};
-  final responseHeaders = okHttpResponse.headers1();
+  final responseHeaders = okHttpResponse.headers();
   final headerSize = responseHeaders.size();
   for (var i = 0; i < headerSize; i++) {
     final key = responseHeaders.name(i).toDartString();

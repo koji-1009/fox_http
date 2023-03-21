@@ -38,210 +38,47 @@ class OkHttpClient extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $OkHttpClientType();
 
-  static final _id_ctor =
-      jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
+  static final _id_Companion = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/OkHttpClient\$Companion;");
 
-  /// from: public void <init>()
+  /// from: static public final okhttp3.OkHttpClient$Companion Companion
   /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient()
-      : super.fromRef(
-            jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
+  static jni.JObject get Companion =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion, jni.JniCallType.objectType)
+          .object);
 
-  static final _id_callTimeoutMillis =
-      jniAccessors.getMethodIDOf(_classRef, "callTimeoutMillis", "()I");
+  static final _id_ctor = jniAccessors.getMethodIDOf(
+      _classRef, "<init>", "(Lokhttp3/OkHttpClient\$Builder;)V");
 
-  /// from: public int callTimeoutMillis()
-  int callTimeoutMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_callTimeoutMillis, jni.JniCallType.intType, []).integer;
-
-  static final _id_connectTimeoutMillis =
-      jniAccessors.getMethodIDOf(_classRef, "connectTimeoutMillis", "()I");
-
-  /// from: public int connectTimeoutMillis()
-  int connectTimeoutMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_connectTimeoutMillis, jni.JniCallType.intType, []).integer;
-
-  static final _id_readTimeoutMillis =
-      jniAccessors.getMethodIDOf(_classRef, "readTimeoutMillis", "()I");
-
-  /// from: public int readTimeoutMillis()
-  int readTimeoutMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_readTimeoutMillis, jni.JniCallType.intType, []).integer;
-
-  static final _id_writeTimeoutMillis =
-      jniAccessors.getMethodIDOf(_classRef, "writeTimeoutMillis", "()I");
-
-  /// from: public int writeTimeoutMillis()
-  int writeTimeoutMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_writeTimeoutMillis, jni.JniCallType.intType, []).integer;
-
-  static final _id_pingIntervalMillis =
-      jniAccessors.getMethodIDOf(_classRef, "pingIntervalMillis", "()I");
-
-  /// from: public int pingIntervalMillis()
-  int pingIntervalMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_pingIntervalMillis, jni.JniCallType.intType, []).integer;
-
-  static final _id_proxy =
-      jniAccessors.getMethodIDOf(_classRef, "proxy", "()Ljava/net/Proxy;");
-
-  /// from: public java.net.Proxy proxy()
+  /// from: public void <init>(okhttp3.OkHttpClient$Builder builder)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject proxy() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_proxy, jni.JniCallType.objectType, []).object);
-
-  static final _id_proxySelector = jniAccessors.getMethodIDOf(
-      _classRef, "proxySelector", "()Ljava/net/ProxySelector;");
-
-  /// from: public java.net.ProxySelector proxySelector()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject proxySelector() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_proxySelector, jni.JniCallType.objectType, []).object);
-
-  static final _id_cookieJar = jniAccessors.getMethodIDOf(
-      _classRef, "cookieJar", "()Lokhttp3/CookieJar;");
-
-  /// from: public okhttp3.CookieJar cookieJar()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject cookieJar() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_cookieJar, jni.JniCallType.objectType, []).object);
-
-  static final _id_cache =
-      jniAccessors.getMethodIDOf(_classRef, "cache", "()Lokhttp3/Cache;");
-
-  /// from: public okhttp3.Cache cache()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject cache() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_cache, jni.JniCallType.objectType, []).object);
-
-  static final _id_dns =
-      jniAccessors.getMethodIDOf(_classRef, "dns", "()Lokhttp3/Dns;");
-
-  /// from: public okhttp3.Dns dns()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject dns() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_dns, jni.JniCallType.objectType, []).object);
-
-  static final _id_socketFactory = jniAccessors.getMethodIDOf(
-      _classRef, "socketFactory", "()Ljavax/net/SocketFactory;");
-
-  /// from: public javax.net.SocketFactory socketFactory()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject socketFactory() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_socketFactory, jni.JniCallType.objectType, []).object);
-
-  static final _id_sslSocketFactory = jniAccessors.getMethodIDOf(
-      _classRef, "sslSocketFactory", "()Ljavax/net/ssl/SSLSocketFactory;");
-
-  /// from: public javax.net.ssl.SSLSocketFactory sslSocketFactory()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject sslSocketFactory() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_sslSocketFactory, jni.JniCallType.objectType, []).object);
-
-  static final _id_hostnameVerifier = jniAccessors.getMethodIDOf(
-      _classRef, "hostnameVerifier", "()Ljavax/net/ssl/HostnameVerifier;");
-
-  /// from: public javax.net.ssl.HostnameVerifier hostnameVerifier()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject hostnameVerifier() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_hostnameVerifier, jni.JniCallType.objectType, []).object);
-
-  static final _id_certificatePinner = jniAccessors.getMethodIDOf(
-      _classRef, "certificatePinner", "()Lokhttp3/CertificatePinner;");
-
-  /// from: public okhttp3.CertificatePinner certificatePinner()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject certificatePinner() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_certificatePinner, jni.JniCallType.objectType, []).object);
-
-  static final _id_authenticator = jniAccessors.getMethodIDOf(
-      _classRef, "authenticator", "()Lokhttp3/Authenticator;");
-
-  /// from: public okhttp3.Authenticator authenticator()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject authenticator() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_authenticator, jni.JniCallType.objectType, []).object);
-
-  static final _id_proxyAuthenticator = jniAccessors.getMethodIDOf(
-      _classRef, "proxyAuthenticator", "()Lokhttp3/Authenticator;");
-
-  /// from: public okhttp3.Authenticator proxyAuthenticator()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject proxyAuthenticator() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_proxyAuthenticator, jni.JniCallType.objectType, []).object);
-
-  static final _id_connectionPool = jniAccessors.getMethodIDOf(
-      _classRef, "connectionPool", "()Lokhttp3/ConnectionPool;");
-
-  /// from: public okhttp3.ConnectionPool connectionPool()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject connectionPool() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_connectionPool, jni.JniCallType.objectType, []).object);
-
-  static final _id_followSslRedirects =
-      jniAccessors.getMethodIDOf(_classRef, "followSslRedirects", "()Z");
-
-  /// from: public boolean followSslRedirects()
-  bool followSslRedirects() => jniAccessors.callMethodWithArgs(reference,
-      _id_followSslRedirects, jni.JniCallType.booleanType, []).boolean;
-
-  static final _id_followRedirects =
-      jniAccessors.getMethodIDOf(_classRef, "followRedirects", "()Z");
-
-  /// from: public boolean followRedirects()
-  bool followRedirects() => jniAccessors.callMethodWithArgs(
-      reference, _id_followRedirects, jni.JniCallType.booleanType, []).boolean;
-
-  static final _id_retryOnConnectionFailure =
-      jniAccessors.getMethodIDOf(_classRef, "retryOnConnectionFailure", "()Z");
-
-  /// from: public boolean retryOnConnectionFailure()
-  bool retryOnConnectionFailure() => jniAccessors.callMethodWithArgs(reference,
-      _id_retryOnConnectionFailure, jni.JniCallType.booleanType, []).boolean;
+  OkHttpClient(OkHttpClient_Builder builder)
+      : super.fromRef(jniAccessors.newObjectWithArgs(
+            _classRef, _id_ctor, [builder.reference]).object);
 
   static final _id_dispatcher = jniAccessors.getMethodIDOf(
       _classRef, "dispatcher", "()Lokhttp3/Dispatcher;");
 
-  /// from: public okhttp3.Dispatcher dispatcher()
+  /// from: public final okhttp3.Dispatcher dispatcher()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject dispatcher() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_dispatcher, jni.JniCallType.objectType, []).object);
 
-  static final _id_protocols =
-      jniAccessors.getMethodIDOf(_classRef, "protocols", "()Ljava/util/List;");
+  static final _id_connectionPool = jniAccessors.getMethodIDOf(
+      _classRef, "connectionPool", "()Lokhttp3/ConnectionPool;");
 
-  /// from: public java.util.List protocols()
+  /// from: public final okhttp3.ConnectionPool connectionPool()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject protocols() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_protocols, jni.JniCallType.objectType, []).object);
-
-  static final _id_connectionSpecs = jniAccessors.getMethodIDOf(
-      _classRef, "connectionSpecs", "()Ljava/util/List;");
-
-  /// from: public java.util.List connectionSpecs()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject connectionSpecs() =>
+  jni.JObject connectionPool() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_connectionSpecs, jni.JniCallType.objectType, []).object);
+          _id_connectionPool, jni.JniCallType.objectType, []).object);
 
   static final _id_interceptors = jniAccessors.getMethodIDOf(
       _classRef, "interceptors", "()Ljava/util/List;");
 
-  /// from: public java.util.List interceptors()
+  /// from: public final java.util.List interceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject interceptors() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -250,7 +87,7 @@ class OkHttpClient extends jni.JObject {
   static final _id_networkInterceptors = jniAccessors.getMethodIDOf(
       _classRef, "networkInterceptors", "()Ljava/util/List;");
 
-  /// from: public java.util.List networkInterceptors()
+  /// from: public final java.util.List networkInterceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject networkInterceptors() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -259,11 +96,231 @@ class OkHttpClient extends jni.JObject {
   static final _id_eventListenerFactory = jniAccessors.getMethodIDOf(
       _classRef, "eventListenerFactory", "()Lokhttp3/EventListener\$Factory;");
 
-  /// from: public okhttp3.EventListener$Factory eventListenerFactory()
+  /// from: public final okhttp3.EventListener$Factory eventListenerFactory()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject eventListenerFactory() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
           _id_eventListenerFactory, jni.JniCallType.objectType, []).object);
+
+  static final _id_retryOnConnectionFailure =
+      jniAccessors.getMethodIDOf(_classRef, "retryOnConnectionFailure", "()Z");
+
+  /// from: public final boolean retryOnConnectionFailure()
+  bool retryOnConnectionFailure() => jniAccessors.callMethodWithArgs(reference,
+      _id_retryOnConnectionFailure, jni.JniCallType.booleanType, []).boolean;
+
+  static final _id_authenticator = jniAccessors.getMethodIDOf(
+      _classRef, "authenticator", "()Lokhttp3/Authenticator;");
+
+  /// from: public final okhttp3.Authenticator authenticator()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject authenticator() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_authenticator, jni.JniCallType.objectType, []).object);
+
+  static final _id_followRedirects =
+      jniAccessors.getMethodIDOf(_classRef, "followRedirects", "()Z");
+
+  /// from: public final boolean followRedirects()
+  bool followRedirects() => jniAccessors.callMethodWithArgs(
+      reference, _id_followRedirects, jni.JniCallType.booleanType, []).boolean;
+
+  static final _id_followSslRedirects =
+      jniAccessors.getMethodIDOf(_classRef, "followSslRedirects", "()Z");
+
+  /// from: public final boolean followSslRedirects()
+  bool followSslRedirects() => jniAccessors.callMethodWithArgs(reference,
+      _id_followSslRedirects, jni.JniCallType.booleanType, []).boolean;
+
+  static final _id_cookieJar = jniAccessors.getMethodIDOf(
+      _classRef, "cookieJar", "()Lokhttp3/CookieJar;");
+
+  /// from: public final okhttp3.CookieJar cookieJar()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject cookieJar() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_cookieJar, jni.JniCallType.objectType, []).object);
+
+  static final _id_cache =
+      jniAccessors.getMethodIDOf(_classRef, "cache", "()Lokhttp3/Cache;");
+
+  /// from: public final okhttp3.Cache cache()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject cache() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_cache, jni.JniCallType.objectType, []).object);
+
+  static final _id_dns =
+      jniAccessors.getMethodIDOf(_classRef, "dns", "()Lokhttp3/Dns;");
+
+  /// from: public final okhttp3.Dns dns()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject dns() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_dns, jni.JniCallType.objectType, []).object);
+
+  static final _id_proxy =
+      jniAccessors.getMethodIDOf(_classRef, "proxy", "()Ljava/net/Proxy;");
+
+  /// from: public final java.net.Proxy proxy()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject proxy() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_proxy, jni.JniCallType.objectType, []).object);
+
+  static final _id_proxySelector = jniAccessors.getMethodIDOf(
+      _classRef, "proxySelector", "()Ljava/net/ProxySelector;");
+
+  /// from: public final java.net.ProxySelector proxySelector()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject proxySelector() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_proxySelector, jni.JniCallType.objectType, []).object);
+
+  static final _id_proxyAuthenticator = jniAccessors.getMethodIDOf(
+      _classRef, "proxyAuthenticator", "()Lokhttp3/Authenticator;");
+
+  /// from: public final okhttp3.Authenticator proxyAuthenticator()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject proxyAuthenticator() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_proxyAuthenticator, jni.JniCallType.objectType, []).object);
+
+  static final _id_socketFactory = jniAccessors.getMethodIDOf(
+      _classRef, "socketFactory", "()Ljavax/net/SocketFactory;");
+
+  /// from: public final javax.net.SocketFactory socketFactory()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject socketFactory() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_socketFactory, jni.JniCallType.objectType, []).object);
+
+  static final _id_sslSocketFactory = jniAccessors.getMethodIDOf(
+      _classRef, "sslSocketFactory", "()Ljavax/net/ssl/SSLSocketFactory;");
+
+  /// from: public final javax.net.ssl.SSLSocketFactory sslSocketFactory()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject sslSocketFactory() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_sslSocketFactory, jni.JniCallType.objectType, []).object);
+
+  static final _id_x509TrustManager = jniAccessors.getMethodIDOf(
+      _classRef, "x509TrustManager", "()Ljavax/net/ssl/X509TrustManager;");
+
+  /// from: public final javax.net.ssl.X509TrustManager x509TrustManager()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject x509TrustManager() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_x509TrustManager, jni.JniCallType.objectType, []).object);
+
+  static final _id_connectionSpecs = jniAccessors.getMethodIDOf(
+      _classRef, "connectionSpecs", "()Ljava/util/List;");
+
+  /// from: public final java.util.List connectionSpecs()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject connectionSpecs() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_connectionSpecs, jni.JniCallType.objectType, []).object);
+
+  static final _id_protocols =
+      jniAccessors.getMethodIDOf(_classRef, "protocols", "()Ljava/util/List;");
+
+  /// from: public final java.util.List protocols()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject protocols() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_protocols, jni.JniCallType.objectType, []).object);
+
+  static final _id_hostnameVerifier = jniAccessors.getMethodIDOf(
+      _classRef, "hostnameVerifier", "()Ljavax/net/ssl/HostnameVerifier;");
+
+  /// from: public final javax.net.ssl.HostnameVerifier hostnameVerifier()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject hostnameVerifier() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_hostnameVerifier, jni.JniCallType.objectType, []).object);
+
+  static final _id_certificatePinner = jniAccessors.getMethodIDOf(
+      _classRef, "certificatePinner", "()Lokhttp3/CertificatePinner;");
+
+  /// from: public final okhttp3.CertificatePinner certificatePinner()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject certificatePinner() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_certificatePinner, jni.JniCallType.objectType, []).object);
+
+  static final _id_certificateChainCleaner = jniAccessors.getMethodIDOf(
+      _classRef,
+      "certificateChainCleaner",
+      "()Lokhttp3/internal/tls/CertificateChainCleaner;");
+
+  /// from: public final okhttp3.internal.tls.CertificateChainCleaner certificateChainCleaner()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject certificateChainCleaner() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_certificateChainCleaner, jni.JniCallType.objectType, []).object);
+
+  static final _id_callTimeoutMillis =
+      jniAccessors.getMethodIDOf(_classRef, "callTimeoutMillis", "()I");
+
+  /// from: public final int callTimeoutMillis()
+  int callTimeoutMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_callTimeoutMillis, jni.JniCallType.intType, []).integer;
+
+  static final _id_connectTimeoutMillis =
+      jniAccessors.getMethodIDOf(_classRef, "connectTimeoutMillis", "()I");
+
+  /// from: public final int connectTimeoutMillis()
+  int connectTimeoutMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_connectTimeoutMillis, jni.JniCallType.intType, []).integer;
+
+  static final _id_readTimeoutMillis =
+      jniAccessors.getMethodIDOf(_classRef, "readTimeoutMillis", "()I");
+
+  /// from: public final int readTimeoutMillis()
+  int readTimeoutMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_readTimeoutMillis, jni.JniCallType.intType, []).integer;
+
+  static final _id_writeTimeoutMillis =
+      jniAccessors.getMethodIDOf(_classRef, "writeTimeoutMillis", "()I");
+
+  /// from: public final int writeTimeoutMillis()
+  int writeTimeoutMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_writeTimeoutMillis, jni.JniCallType.intType, []).integer;
+
+  static final _id_pingIntervalMillis =
+      jniAccessors.getMethodIDOf(_classRef, "pingIntervalMillis", "()I");
+
+  /// from: public final int pingIntervalMillis()
+  int pingIntervalMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_pingIntervalMillis, jni.JniCallType.intType, []).integer;
+
+  static final _id_minWebSocketMessageToCompress = jniAccessors.getMethodIDOf(
+      _classRef, "minWebSocketMessageToCompress", "()J");
+
+  /// from: public final long minWebSocketMessageToCompress()
+  int minWebSocketMessageToCompress() => jniAccessors.callMethodWithArgs(
+      reference,
+      _id_minWebSocketMessageToCompress,
+      jni.JniCallType.longType, []).long;
+
+  static final _id_getRouteDatabase = jniAccessors.getMethodIDOf(_classRef,
+      "getRouteDatabase", "()Lokhttp3/internal/connection/RouteDatabase;");
+
+  /// from: public final okhttp3.internal.connection.RouteDatabase getRouteDatabase()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject getRouteDatabase() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_getRouteDatabase, jni.JniCallType.objectType, []).object);
+
+  static final _id_ctor1 =
+      jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
+
+  /// from: public void <init>()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient.ctor1()
+      : super.fromRef(
+            jniAccessors.newObjectWithArgs(_classRef, _id_ctor1, []).object);
 
   static final _id_newCall = jniAccessors.getMethodIDOf(
       _classRef, "newCall", "(Lokhttp3/Request;)Lokhttp3/Call;");
@@ -296,6 +353,15 @@ class OkHttpClient extends jni.JObject {
   OkHttpClient_Builder newBuilder() =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_newBuilder, jni.JniCallType.objectType, []).object);
+
+  static final _id_clone =
+      jniAccessors.getMethodIDOf(_classRef, "clone", "()Ljava/lang/Object;");
+
+  /// from: public java.lang.Object clone()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject clone() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_clone, jni.JniCallType.objectType, []).object);
 }
 
 class $OkHttpClientType extends jni.JObjType<OkHttpClient> {
@@ -344,355 +410,19 @@ class OkHttpClient_Builder extends jni.JObject {
       : super.fromRef(
             jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
 
-  static final _id_callTimeout = jniAccessors.getMethodIDOf(
-      _classRef,
-      "callTimeout",
-      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+  static final _id_ctor1 = jniAccessors.getMethodIDOf(
+      _classRef, "<init>", "(Lokhttp3/OkHttpClient;)V");
 
-  /// from: public okhttp3.OkHttpClient$Builder callTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// from: public void <init>(okhttp3.OkHttpClient okHttpClient)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder callTimeout(int j, jni.JObject timeUnit) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_callTimeout,
-          jni.JniCallType.objectType,
-          [j, timeUnit.reference]).object);
-
-  static final _id_callTimeout1 = jniAccessors.getMethodIDOf(_classRef,
-      "callTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder callTimeout(java.time.Duration duration)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder callTimeout1(jni.JObject duration) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_callTimeout1,
-          jni.JniCallType.objectType,
-          [duration.reference]).object);
-
-  static final _id_connectTimeout = jniAccessors.getMethodIDOf(
-      _classRef,
-      "connectTimeout",
-      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder connectTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder connectTimeout(int j, jni.JObject timeUnit) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_connectTimeout,
-          jni.JniCallType.objectType,
-          [j, timeUnit.reference]).object);
-
-  static final _id_connectTimeout1 = jniAccessors.getMethodIDOf(
-      _classRef,
-      "connectTimeout",
-      "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder connectTimeout(java.time.Duration duration)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder connectTimeout1(jni.JObject duration) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_connectTimeout1,
-          jni.JniCallType.objectType,
-          [duration.reference]).object);
-
-  static final _id_readTimeout = jniAccessors.getMethodIDOf(
-      _classRef,
-      "readTimeout",
-      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder readTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder readTimeout(int j, jni.JObject timeUnit) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_readTimeout,
-          jni.JniCallType.objectType,
-          [j, timeUnit.reference]).object);
-
-  static final _id_readTimeout1 = jniAccessors.getMethodIDOf(_classRef,
-      "readTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder readTimeout(java.time.Duration duration)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder readTimeout1(jni.JObject duration) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_readTimeout1,
-          jni.JniCallType.objectType,
-          [duration.reference]).object);
-
-  static final _id_writeTimeout = jniAccessors.getMethodIDOf(
-      _classRef,
-      "writeTimeout",
-      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder writeTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder writeTimeout(int j, jni.JObject timeUnit) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_writeTimeout,
-          jni.JniCallType.objectType,
-          [j, timeUnit.reference]).object);
-
-  static final _id_writeTimeout1 = jniAccessors.getMethodIDOf(_classRef,
-      "writeTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder writeTimeout(java.time.Duration duration)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder writeTimeout1(jni.JObject duration) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_writeTimeout1,
-          jni.JniCallType.objectType,
-          [duration.reference]).object);
-
-  static final _id_pingInterval = jniAccessors.getMethodIDOf(
-      _classRef,
-      "pingInterval",
-      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder pingInterval(long j, java.util.concurrent.TimeUnit timeUnit)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder pingInterval(int j, jni.JObject timeUnit) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_pingInterval,
-          jni.JniCallType.objectType,
-          [j, timeUnit.reference]).object);
-
-  static final _id_pingInterval1 = jniAccessors.getMethodIDOf(_classRef,
-      "pingInterval", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder pingInterval(java.time.Duration duration)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder pingInterval1(jni.JObject duration) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_pingInterval1,
-          jni.JniCallType.objectType,
-          [duration.reference]).object);
-
-  static final _id_proxy = jniAccessors.getMethodIDOf(
-      _classRef, "proxy", "(Ljava/net/Proxy;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder proxy(java.net.Proxy proxy)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder proxy(jni.JObject proxy) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_proxy,
-          jni.JniCallType.objectType,
-          [proxy.reference]).object);
-
-  static final _id_proxySelector = jniAccessors.getMethodIDOf(
-      _classRef,
-      "proxySelector",
-      "(Ljava/net/ProxySelector;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder proxySelector(java.net.ProxySelector proxySelector)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder proxySelector(jni.JObject proxySelector) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_proxySelector,
-          jni.JniCallType.objectType,
-          [proxySelector.reference]).object);
-
-  static final _id_cookieJar = jniAccessors.getMethodIDOf(_classRef,
-      "cookieJar", "(Lokhttp3/CookieJar;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder cookieJar(okhttp3.CookieJar cookieJar)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder cookieJar(jni.JObject cookieJar) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_cookieJar,
-          jni.JniCallType.objectType,
-          [cookieJar.reference]).object);
-
-  static final _id_cache = jniAccessors.getMethodIDOf(
-      _classRef, "cache", "(Lokhttp3/Cache;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder cache(okhttp3.Cache cache)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder cache(jni.JObject cache) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_cache,
-          jni.JniCallType.objectType,
-          [cache.reference]).object);
-
-  static final _id_dns = jniAccessors.getMethodIDOf(
-      _classRef, "dns", "(Lokhttp3/Dns;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder dns(okhttp3.Dns dns)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder dns(jni.JObject dns) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_dns,
-          jni.JniCallType.objectType,
-          [dns.reference]).object);
-
-  static final _id_socketFactory = jniAccessors.getMethodIDOf(
-      _classRef,
-      "socketFactory",
-      "(Ljavax/net/SocketFactory;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder socketFactory(javax.net.SocketFactory socketFactory)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder socketFactory(jni.JObject socketFactory) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_socketFactory,
-          jni.JniCallType.objectType,
-          [socketFactory.reference]).object);
-
-  static final _id_sslSocketFactory = jniAccessors.getMethodIDOf(
-      _classRef,
-      "sslSocketFactory",
-      "(Ljavax/net/ssl/SSLSocketFactory;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory sSLSocketFactory)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder sslSocketFactory(jni.JObject sSLSocketFactory) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_sslSocketFactory,
-          jni.JniCallType.objectType,
-          [sSLSocketFactory.reference]).object);
-
-  static final _id_sslSocketFactory1 = jniAccessors.getMethodIDOf(
-      _classRef,
-      "sslSocketFactory",
-      "(Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/X509TrustManager;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory sSLSocketFactory, javax.net.ssl.X509TrustManager x509TrustManager)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder sslSocketFactory1(
-          jni.JObject sSLSocketFactory, jni.JObject x509TrustManager) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_sslSocketFactory1,
-          jni.JniCallType.objectType,
-          [sSLSocketFactory.reference, x509TrustManager.reference]).object);
-
-  static final _id_hostnameVerifier = jniAccessors.getMethodIDOf(
-      _classRef,
-      "hostnameVerifier",
-      "(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder hostnameVerifier(javax.net.ssl.HostnameVerifier hostnameVerifier)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder hostnameVerifier(jni.JObject hostnameVerifier) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_hostnameVerifier,
-          jni.JniCallType.objectType,
-          [hostnameVerifier.reference]).object);
-
-  static final _id_certificatePinner = jniAccessors.getMethodIDOf(
-      _classRef,
-      "certificatePinner",
-      "(Lokhttp3/CertificatePinner;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder certificatePinner(okhttp3.CertificatePinner certificatePinner)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder certificatePinner(jni.JObject certificatePinner) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_certificatePinner,
-          jni.JniCallType.objectType,
-          [certificatePinner.reference]).object);
-
-  static final _id_authenticator = jniAccessors.getMethodIDOf(
-      _classRef,
-      "authenticator",
-      "(Lokhttp3/Authenticator;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder authenticator(okhttp3.Authenticator authenticator)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder authenticator(jni.JObject authenticator) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_authenticator,
-          jni.JniCallType.objectType,
-          [authenticator.reference]).object);
-
-  static final _id_proxyAuthenticator = jniAccessors.getMethodIDOf(
-      _classRef,
-      "proxyAuthenticator",
-      "(Lokhttp3/Authenticator;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder proxyAuthenticator(okhttp3.Authenticator authenticator)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder proxyAuthenticator(jni.JObject authenticator) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_proxyAuthenticator,
-          jni.JniCallType.objectType,
-          [authenticator.reference]).object);
-
-  static final _id_connectionPool = jniAccessors.getMethodIDOf(
-      _classRef,
-      "connectionPool",
-      "(Lokhttp3/ConnectionPool;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder connectionPool(okhttp3.ConnectionPool connectionPool)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder connectionPool(jni.JObject connectionPool) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_connectionPool,
-          jni.JniCallType.objectType,
-          [connectionPool.reference]).object);
-
-  static final _id_followSslRedirects = jniAccessors.getMethodIDOf(
-      _classRef, "followSslRedirects", "(Z)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder followSslRedirects(boolean z)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder followSslRedirects(bool z) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_followSslRedirects,
-          jni.JniCallType.objectType,
-          [z]).object);
-
-  static final _id_followRedirects = jniAccessors.getMethodIDOf(
-      _classRef, "followRedirects", "(Z)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder followRedirects(boolean z)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder followRedirects(bool z) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_followRedirects,
-          jni.JniCallType.objectType,
-          [z]).object);
-
-  static final _id_retryOnConnectionFailure = jniAccessors.getMethodIDOf(
-      _classRef,
-      "retryOnConnectionFailure",
-      "(Z)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder retryOnConnectionFailure(boolean z)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder retryOnConnectionFailure(bool z) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_retryOnConnectionFailure,
-          jni.JniCallType.objectType,
-          [z]).object);
+  OkHttpClient_Builder.ctor1(OkHttpClient okHttpClient)
+      : super.fromRef(jniAccessors.newObjectWithArgs(
+            _classRef, _id_ctor1, [okHttpClient.reference]).object);
 
   static final _id_dispatcher = jniAccessors.getMethodIDOf(_classRef,
       "dispatcher", "(Lokhttp3/Dispatcher;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder dispatcher(okhttp3.Dispatcher dispatcher)
+  /// from: public final okhttp3.OkHttpClient$Builder dispatcher(okhttp3.Dispatcher dispatcher)
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient_Builder dispatcher(jni.JObject dispatcher) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -701,34 +431,24 @@ class OkHttpClient_Builder extends jni.JObject {
           jni.JniCallType.objectType,
           [dispatcher.reference]).object);
 
-  static final _id_protocols = jniAccessors.getMethodIDOf(_classRef,
-      "protocols", "(Ljava/util/List;)Lokhttp3/OkHttpClient\$Builder;");
+  static final _id_connectionPool = jniAccessors.getMethodIDOf(
+      _classRef,
+      "connectionPool",
+      "(Lokhttp3/ConnectionPool;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder protocols(java.util.List list)
+  /// from: public final okhttp3.OkHttpClient$Builder connectionPool(okhttp3.ConnectionPool connectionPool)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder protocols(jni.JObject list) =>
+  OkHttpClient_Builder connectionPool(jni.JObject connectionPool) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
           reference,
-          _id_protocols,
+          _id_connectionPool,
           jni.JniCallType.objectType,
-          [list.reference]).object);
-
-  static final _id_connectionSpecs = jniAccessors.getMethodIDOf(_classRef,
-      "connectionSpecs", "(Ljava/util/List;)Lokhttp3/OkHttpClient\$Builder;");
-
-  /// from: public okhttp3.OkHttpClient$Builder connectionSpecs(java.util.List list)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  OkHttpClient_Builder connectionSpecs(jni.JObject list) =>
-      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_connectionSpecs,
-          jni.JniCallType.objectType,
-          [list.reference]).object);
+          [connectionPool.reference]).object);
 
   static final _id_interceptors = jniAccessors.getMethodIDOf(
       _classRef, "interceptors", "()Ljava/util/List;");
 
-  /// from: public java.util.List interceptors()
+  /// from: public final java.util.List interceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject interceptors() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -739,7 +459,7 @@ class OkHttpClient_Builder extends jni.JObject {
       "addInterceptor",
       "(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder addInterceptor(okhttp3.Interceptor interceptor)
+  /// from: public final okhttp3.OkHttpClient$Builder addInterceptor(okhttp3.Interceptor interceptor)
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient_Builder addInterceptor(jni.JObject interceptor) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -751,7 +471,7 @@ class OkHttpClient_Builder extends jni.JObject {
   static final _id_networkInterceptors = jniAccessors.getMethodIDOf(
       _classRef, "networkInterceptors", "()Ljava/util/List;");
 
-  /// from: public java.util.List networkInterceptors()
+  /// from: public final java.util.List networkInterceptors()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject networkInterceptors() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -762,7 +482,7 @@ class OkHttpClient_Builder extends jni.JObject {
       "addNetworkInterceptor",
       "(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder addNetworkInterceptor(okhttp3.Interceptor interceptor)
+  /// from: public final okhttp3.OkHttpClient$Builder addNetworkInterceptor(okhttp3.Interceptor interceptor)
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient_Builder addNetworkInterceptor(jni.JObject interceptor) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -776,7 +496,7 @@ class OkHttpClient_Builder extends jni.JObject {
       "eventListener",
       "(Lokhttp3/EventListener;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder eventListener(okhttp3.EventListener eventListener)
+  /// from: public final okhttp3.OkHttpClient$Builder eventListener(okhttp3.EventListener eventListener)
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient_Builder eventListener(jni.JObject eventListener) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -790,7 +510,7 @@ class OkHttpClient_Builder extends jni.JObject {
       "eventListenerFactory",
       "(Lokhttp3/EventListener\$Factory;)Lokhttp3/OkHttpClient\$Builder;");
 
-  /// from: public okhttp3.OkHttpClient$Builder eventListenerFactory(okhttp3.EventListener$Factory factory)
+  /// from: public final okhttp3.OkHttpClient$Builder eventListenerFactory(okhttp3.EventListener$Factory factory)
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient_Builder eventListenerFactory(jni.JObject factory0) =>
       const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -799,10 +519,379 @@ class OkHttpClient_Builder extends jni.JObject {
           jni.JniCallType.objectType,
           [factory0.reference]).object);
 
+  static final _id_retryOnConnectionFailure = jniAccessors.getMethodIDOf(
+      _classRef,
+      "retryOnConnectionFailure",
+      "(Z)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder retryOnConnectionFailure(boolean z)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder retryOnConnectionFailure(bool z) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_retryOnConnectionFailure,
+          jni.JniCallType.objectType,
+          [z]).object);
+
+  static final _id_authenticator = jniAccessors.getMethodIDOf(
+      _classRef,
+      "authenticator",
+      "(Lokhttp3/Authenticator;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder authenticator(okhttp3.Authenticator authenticator)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder authenticator(jni.JObject authenticator) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_authenticator,
+          jni.JniCallType.objectType,
+          [authenticator.reference]).object);
+
+  static final _id_followRedirects = jniAccessors.getMethodIDOf(
+      _classRef, "followRedirects", "(Z)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder followRedirects(boolean z)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder followRedirects(bool z) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_followRedirects,
+          jni.JniCallType.objectType,
+          [z]).object);
+
+  static final _id_followSslRedirects = jniAccessors.getMethodIDOf(
+      _classRef, "followSslRedirects", "(Z)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder followSslRedirects(boolean z)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder followSslRedirects(bool z) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_followSslRedirects,
+          jni.JniCallType.objectType,
+          [z]).object);
+
+  static final _id_cookieJar = jniAccessors.getMethodIDOf(_classRef,
+      "cookieJar", "(Lokhttp3/CookieJar;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder cookieJar(okhttp3.CookieJar cookieJar)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder cookieJar(jni.JObject cookieJar) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_cookieJar,
+          jni.JniCallType.objectType,
+          [cookieJar.reference]).object);
+
+  static final _id_cache = jniAccessors.getMethodIDOf(
+      _classRef, "cache", "(Lokhttp3/Cache;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder cache(okhttp3.Cache cache)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder cache(jni.JObject cache) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_cache,
+          jni.JniCallType.objectType,
+          [cache.reference]).object);
+
+  static final _id_dns = jniAccessors.getMethodIDOf(
+      _classRef, "dns", "(Lokhttp3/Dns;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder dns(okhttp3.Dns dns)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder dns(jni.JObject dns) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_dns,
+          jni.JniCallType.objectType,
+          [dns.reference]).object);
+
+  static final _id_proxy = jniAccessors.getMethodIDOf(
+      _classRef, "proxy", "(Ljava/net/Proxy;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder proxy(java.net.Proxy proxy)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder proxy(jni.JObject proxy) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_proxy,
+          jni.JniCallType.objectType,
+          [proxy.reference]).object);
+
+  static final _id_proxySelector = jniAccessors.getMethodIDOf(
+      _classRef,
+      "proxySelector",
+      "(Ljava/net/ProxySelector;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder proxySelector(java.net.ProxySelector proxySelector)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder proxySelector(jni.JObject proxySelector) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_proxySelector,
+          jni.JniCallType.objectType,
+          [proxySelector.reference]).object);
+
+  static final _id_proxyAuthenticator = jniAccessors.getMethodIDOf(
+      _classRef,
+      "proxyAuthenticator",
+      "(Lokhttp3/Authenticator;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder proxyAuthenticator(okhttp3.Authenticator authenticator)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder proxyAuthenticator(jni.JObject authenticator) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_proxyAuthenticator,
+          jni.JniCallType.objectType,
+          [authenticator.reference]).object);
+
+  static final _id_socketFactory = jniAccessors.getMethodIDOf(
+      _classRef,
+      "socketFactory",
+      "(Ljavax/net/SocketFactory;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder socketFactory(javax.net.SocketFactory socketFactory)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder socketFactory(jni.JObject socketFactory) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_socketFactory,
+          jni.JniCallType.objectType,
+          [socketFactory.reference]).object);
+
+  static final _id_sslSocketFactory = jniAccessors.getMethodIDOf(
+      _classRef,
+      "sslSocketFactory",
+      "(Ljavax/net/ssl/SSLSocketFactory;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory sSLSocketFactory)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder sslSocketFactory(jni.JObject sSLSocketFactory) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_sslSocketFactory,
+          jni.JniCallType.objectType,
+          [sSLSocketFactory.reference]).object);
+
+  static final _id_sslSocketFactory1 = jniAccessors.getMethodIDOf(
+      _classRef,
+      "sslSocketFactory",
+      "(Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/X509TrustManager;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder sslSocketFactory(javax.net.ssl.SSLSocketFactory sSLSocketFactory, javax.net.ssl.X509TrustManager x509TrustManager)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder sslSocketFactory1(
+          jni.JObject sSLSocketFactory, jni.JObject x509TrustManager) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_sslSocketFactory1,
+          jni.JniCallType.objectType,
+          [sSLSocketFactory.reference, x509TrustManager.reference]).object);
+
+  static final _id_connectionSpecs = jniAccessors.getMethodIDOf(_classRef,
+      "connectionSpecs", "(Ljava/util/List;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder connectionSpecs(java.util.List list)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder connectionSpecs(jni.JObject list) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_connectionSpecs,
+          jni.JniCallType.objectType,
+          [list.reference]).object);
+
+  static final _id_protocols = jniAccessors.getMethodIDOf(_classRef,
+      "protocols", "(Ljava/util/List;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder protocols(java.util.List list)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder protocols(jni.JObject list) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_protocols,
+          jni.JniCallType.objectType,
+          [list.reference]).object);
+
+  static final _id_hostnameVerifier = jniAccessors.getMethodIDOf(
+      _classRef,
+      "hostnameVerifier",
+      "(Ljavax/net/ssl/HostnameVerifier;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder hostnameVerifier(javax.net.ssl.HostnameVerifier hostnameVerifier)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder hostnameVerifier(jni.JObject hostnameVerifier) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_hostnameVerifier,
+          jni.JniCallType.objectType,
+          [hostnameVerifier.reference]).object);
+
+  static final _id_certificatePinner = jniAccessors.getMethodIDOf(
+      _classRef,
+      "certificatePinner",
+      "(Lokhttp3/CertificatePinner;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder certificatePinner(okhttp3.CertificatePinner certificatePinner)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder certificatePinner(jni.JObject certificatePinner) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_certificatePinner,
+          jni.JniCallType.objectType,
+          [certificatePinner.reference]).object);
+
+  static final _id_callTimeout = jniAccessors.getMethodIDOf(
+      _classRef,
+      "callTimeout",
+      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder callTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder callTimeout(int j, jni.JObject timeUnit) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_callTimeout,
+          jni.JniCallType.objectType,
+          [j, timeUnit.reference]).object);
+
+  static final _id_callTimeout1 = jniAccessors.getMethodIDOf(_classRef,
+      "callTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder callTimeout(java.time.Duration duration)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder callTimeout1(jni.JObject duration) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_callTimeout1,
+          jni.JniCallType.objectType,
+          [duration.reference]).object);
+
+  static final _id_connectTimeout = jniAccessors.getMethodIDOf(
+      _classRef,
+      "connectTimeout",
+      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder connectTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder connectTimeout(int j, jni.JObject timeUnit) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_connectTimeout,
+          jni.JniCallType.objectType,
+          [j, timeUnit.reference]).object);
+
+  static final _id_connectTimeout1 = jniAccessors.getMethodIDOf(
+      _classRef,
+      "connectTimeout",
+      "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder connectTimeout(java.time.Duration duration)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder connectTimeout1(jni.JObject duration) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_connectTimeout1,
+          jni.JniCallType.objectType,
+          [duration.reference]).object);
+
+  static final _id_readTimeout = jniAccessors.getMethodIDOf(
+      _classRef,
+      "readTimeout",
+      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder readTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder readTimeout(int j, jni.JObject timeUnit) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_readTimeout,
+          jni.JniCallType.objectType,
+          [j, timeUnit.reference]).object);
+
+  static final _id_readTimeout1 = jniAccessors.getMethodIDOf(_classRef,
+      "readTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder readTimeout(java.time.Duration duration)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder readTimeout1(jni.JObject duration) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_readTimeout1,
+          jni.JniCallType.objectType,
+          [duration.reference]).object);
+
+  static final _id_writeTimeout = jniAccessors.getMethodIDOf(
+      _classRef,
+      "writeTimeout",
+      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder writeTimeout(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder writeTimeout(int j, jni.JObject timeUnit) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_writeTimeout,
+          jni.JniCallType.objectType,
+          [j, timeUnit.reference]).object);
+
+  static final _id_writeTimeout1 = jniAccessors.getMethodIDOf(_classRef,
+      "writeTimeout", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder writeTimeout(java.time.Duration duration)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder writeTimeout1(jni.JObject duration) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_writeTimeout1,
+          jni.JniCallType.objectType,
+          [duration.reference]).object);
+
+  static final _id_pingInterval = jniAccessors.getMethodIDOf(
+      _classRef,
+      "pingInterval",
+      "(JLjava/util/concurrent/TimeUnit;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder pingInterval(long j, java.util.concurrent.TimeUnit timeUnit)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder pingInterval(int j, jni.JObject timeUnit) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_pingInterval,
+          jni.JniCallType.objectType,
+          [j, timeUnit.reference]).object);
+
+  static final _id_pingInterval1 = jniAccessors.getMethodIDOf(_classRef,
+      "pingInterval", "(Ljava/time/Duration;)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder pingInterval(java.time.Duration duration)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder pingInterval1(jni.JObject duration) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_pingInterval1,
+          jni.JniCallType.objectType,
+          [duration.reference]).object);
+
+  static final _id_minWebSocketMessageToCompress = jniAccessors.getMethodIDOf(
+      _classRef,
+      "minWebSocketMessageToCompress",
+      "(J)Lokhttp3/OkHttpClient\$Builder;");
+
+  /// from: public final okhttp3.OkHttpClient$Builder minWebSocketMessageToCompress(long j)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  OkHttpClient_Builder minWebSocketMessageToCompress(int j) =>
+      const $OkHttpClient_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_minWebSocketMessageToCompress,
+          jni.JniCallType.objectType,
+          [j]).object);
+
   static final _id_build = jniAccessors.getMethodIDOf(
       _classRef, "build", "()Lokhttp3/OkHttpClient;");
 
-  /// from: public okhttp3.OkHttpClient build()
+  /// from: public final okhttp3.OkHttpClient build()
   /// The returned object must be deleted after use, by calling the `delete` method.
   OkHttpClient build() =>
       const $OkHttpClientType().fromRef(jniAccessors.callMethodWithArgs(
@@ -949,10 +1038,20 @@ class Headers extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $HeadersType();
 
+  static final _id_Companion = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/Headers\$Companion;");
+
+  /// from: static public final okhttp3.Headers$Companion Companion
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static jni.JObject get Companion =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion, jni.JniCallType.objectType)
+          .object);
+
   static final _id_get0 = jniAccessors.getMethodIDOf(
       _classRef, "get", "(Ljava/lang/String;)Ljava/lang/String;");
 
-  /// from: public java.lang.String get(java.lang.String string)
+  /// from: public final java.lang.String get(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString get0(jni.JString string) =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -961,7 +1060,7 @@ class Headers extends jni.JObject {
   static final _id_getDate = jniAccessors.getMethodIDOf(
       _classRef, "getDate", "(Ljava/lang/String;)Ljava/util/Date;");
 
-  /// from: public java.util.Date getDate(java.lang.String string)
+  /// from: public final java.util.Date getDate(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject getDate(jni.JString string) =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -970,7 +1069,7 @@ class Headers extends jni.JObject {
   static final _id_getInstant = jniAccessors.getMethodIDOf(
       _classRef, "getInstant", "(Ljava/lang/String;)Ljava/time/Instant;");
 
-  /// from: public java.time.Instant getInstant(java.lang.String string)
+  /// from: public final java.time.Instant getInstant(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject getInstant(jni.JString string) =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -981,14 +1080,14 @@ class Headers extends jni.JObject {
 
   static final _id_size = jniAccessors.getMethodIDOf(_classRef, "size", "()I");
 
-  /// from: public int size()
+  /// from: public final int size()
   int size() => jniAccessors.callMethodWithArgs(
       reference, _id_size, jni.JniCallType.intType, []).integer;
 
   static final _id_name =
       jniAccessors.getMethodIDOf(_classRef, "name", "(I)Ljava/lang/String;");
 
-  /// from: public java.lang.String name(int i)
+  /// from: public final java.lang.String name(int i)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString name(int i) =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
@@ -997,7 +1096,7 @@ class Headers extends jni.JObject {
   static final _id_value =
       jniAccessors.getMethodIDOf(_classRef, "value", "(I)Ljava/lang/String;");
 
-  /// from: public java.lang.String value(int i)
+  /// from: public final java.lang.String value(int i)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString value(int i) =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1006,7 +1105,7 @@ class Headers extends jni.JObject {
   static final _id_names =
       jniAccessors.getMethodIDOf(_classRef, "names", "()Ljava/util/Set;");
 
-  /// from: public java.util.Set names()
+  /// from: public final java.util.Set names()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject names() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1015,7 +1114,7 @@ class Headers extends jni.JObject {
   static final _id_values = jniAccessors.getMethodIDOf(
       _classRef, "values", "(Ljava/lang/String;)Ljava/util/List;");
 
-  /// from: public java.util.List values(java.lang.String string)
+  /// from: public final java.util.List values(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject values(jni.JString string) =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -1024,14 +1123,23 @@ class Headers extends jni.JObject {
   static final _id_byteCount =
       jniAccessors.getMethodIDOf(_classRef, "byteCount", "()J");
 
-  /// from: public long byteCount()
+  /// from: public final long byteCount()
   int byteCount() => jniAccessors.callMethodWithArgs(
       reference, _id_byteCount, jni.JniCallType.longType, []).long;
+
+  static final _id_iterator = jniAccessors.getMethodIDOf(
+      _classRef, "iterator", "()Ljava/util/Iterator;");
+
+  /// from: public java.util.Iterator iterator()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject iterator() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_iterator, jni.JniCallType.objectType, []).object);
 
   static final _id_newBuilder = jniAccessors.getMethodIDOf(
       _classRef, "newBuilder", "()Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder newBuilder()
+  /// from: public final okhttp3.Headers$Builder newBuilder()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder newBuilder() =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1063,7 +1171,7 @@ class Headers extends jni.JObject {
   static final _id_toMultimap =
       jniAccessors.getMethodIDOf(_classRef, "toMultimap", "()Ljava/util/Map;");
 
-  /// from: public java.util.Map toMultimap()
+  /// from: public final java.util.Map toMultimap()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject toMultimap() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1072,7 +1180,7 @@ class Headers extends jni.JObject {
   static final _id_of = jniAccessors.getStaticMethodIDOf(
       _classRef, "of", "([Ljava/lang/String;)Lokhttp3/Headers;");
 
-  /// from: static public okhttp3.Headers of(java.lang.String[] strings)
+  /// from: static public final okhttp3.Headers of(java.lang.String[] strings)
   /// The returned object must be deleted after use, by calling the `delete` method.
   static Headers of(jni.JArray<jni.JString> strings) =>
       const $HeadersType().fromRef(jniAccessors.callStaticMethodWithArgs(
@@ -1084,7 +1192,7 @@ class Headers extends jni.JObject {
   static final _id_of1 = jniAccessors.getStaticMethodIDOf(
       _classRef, "of", "(Ljava/util/Map;)Lokhttp3/Headers;");
 
-  /// from: static public okhttp3.Headers of(java.util.Map map)
+  /// from: static public final okhttp3.Headers of(java.util.Map map)
   /// The returned object must be deleted after use, by calling the `delete` method.
   static Headers of1(jni.JObject map) =>
       const $HeadersType().fromRef(jniAccessors.callStaticMethodWithArgs(
@@ -1092,6 +1200,15 @@ class Headers extends jni.JObject {
           _id_of1,
           jni.JniCallType.objectType,
           [map.reference]).object);
+
+  static final _id_ctor = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "([Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V");
+
+  /// from: public void <init>(java.lang.String[] strings, kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Headers(jni.JArray<jni.JString> strings, jni.JObject defaultConstructorMarker)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor,
+            [strings.reference, defaultConstructorMarker.reference]).object);
 }
 
 class $HeadersType extends jni.JObjType<Headers> {
@@ -1142,7 +1259,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_add = jniAccessors.getMethodIDOf(
       _classRef, "add", "(Ljava/lang/String;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder add(java.lang.String string)
+  /// from: public final okhttp3.Headers$Builder add(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder add(jni.JString string) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1154,7 +1271,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_add1 = jniAccessors.getMethodIDOf(_classRef, "add",
       "(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder add(java.lang.String string, java.lang.String string1)
+  /// from: public final okhttp3.Headers$Builder add(java.lang.String string, java.lang.String string1)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder add1(jni.JString string, jni.JString string1) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1168,7 +1285,7 @@ class Headers_Builder extends jni.JObject {
       "addUnsafeNonAscii",
       "(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder addUnsafeNonAscii(java.lang.String string, java.lang.String string1)
+  /// from: public final okhttp3.Headers$Builder addUnsafeNonAscii(java.lang.String string, java.lang.String string1)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder addUnsafeNonAscii(jni.JString string, jni.JString string1) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1180,7 +1297,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_addAll = jniAccessors.getMethodIDOf(
       _classRef, "addAll", "(Lokhttp3/Headers;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder addAll(okhttp3.Headers headers)
+  /// from: public final okhttp3.Headers$Builder addAll(okhttp3.Headers headers)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder addAll(Headers headers) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1192,7 +1309,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_add2 = jniAccessors.getMethodIDOf(_classRef, "add",
       "(Ljava/lang/String;Ljava/util/Date;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder add(java.lang.String string, java.util.Date date)
+  /// from: public final okhttp3.Headers$Builder add(java.lang.String string, java.util.Date date)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder add2(jni.JString string, jni.JObject date) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1204,7 +1321,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_add3 = jniAccessors.getMethodIDOf(_classRef, "add",
       "(Ljava/lang/String;Ljava/time/Instant;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder add(java.lang.String string, java.time.Instant instant)
+  /// from: public final okhttp3.Headers$Builder add(java.lang.String string, java.time.Instant instant)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder add3(jni.JString string, jni.JObject instant) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1216,7 +1333,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_set0 = jniAccessors.getMethodIDOf(_classRef, "set",
       "(Ljava/lang/String;Ljava/util/Date;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder set(java.lang.String string, java.util.Date date)
+  /// from: public final okhttp3.Headers$Builder set(java.lang.String string, java.util.Date date)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder set0(jni.JString string, jni.JObject date) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1228,7 +1345,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_set1 = jniAccessors.getMethodIDOf(_classRef, "set",
       "(Ljava/lang/String;Ljava/time/Instant;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder set(java.lang.String string, java.time.Instant instant)
+  /// from: public final okhttp3.Headers$Builder set(java.lang.String string, java.time.Instant instant)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder set1(jni.JString string, jni.JObject instant) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1240,7 +1357,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_removeAll = jniAccessors.getMethodIDOf(
       _classRef, "removeAll", "(Ljava/lang/String;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder removeAll(java.lang.String string)
+  /// from: public final okhttp3.Headers$Builder removeAll(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder removeAll(jni.JString string) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1252,7 +1369,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_set2 = jniAccessors.getMethodIDOf(_classRef, "set",
       "(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers\$Builder;");
 
-  /// from: public okhttp3.Headers$Builder set(java.lang.String string, java.lang.String string1)
+  /// from: public final okhttp3.Headers$Builder set(java.lang.String string, java.lang.String string1)
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers_Builder set2(jni.JString string, jni.JString string1) =>
       const $Headers_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1264,7 +1381,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_get0 = jniAccessors.getMethodIDOf(
       _classRef, "get", "(Ljava/lang/String;)Ljava/lang/String;");
 
-  /// from: public java.lang.String get(java.lang.String string)
+  /// from: public final java.lang.String get(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString get0(jni.JString string) =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -1273,7 +1390,7 @@ class Headers_Builder extends jni.JObject {
   static final _id_build =
       jniAccessors.getMethodIDOf(_classRef, "build", "()Lokhttp3/Headers;");
 
-  /// from: public okhttp3.Headers build()
+  /// from: public final okhttp3.Headers build()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers build() =>
       const $HeadersType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1316,10 +1433,25 @@ class Request extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $RequestType();
 
+  static final _id_ctor = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "(Lokhttp3/HttpUrl;Ljava/lang/String;Lokhttp3/Headers;Lokhttp3/RequestBody;Ljava/util/Map;)V");
+
+  /// from: public void <init>(okhttp3.HttpUrl httpUrl, java.lang.String string, okhttp3.Headers headers, okhttp3.RequestBody requestBody, java.util.Map map)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Request(jni.JObject httpUrl, jni.JString string, Headers headers,
+      RequestBody requestBody, jni.JObject map)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor, [
+          httpUrl.reference,
+          string.reference,
+          headers.reference,
+          requestBody.reference,
+          map.reference
+        ]).object);
+
   static final _id_url =
       jniAccessors.getMethodIDOf(_classRef, "url", "()Lokhttp3/HttpUrl;");
 
-  /// from: public okhttp3.HttpUrl url()
+  /// from: public final okhttp3.HttpUrl url()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject url() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1328,7 +1460,7 @@ class Request extends jni.JObject {
   static final _id_method =
       jniAccessors.getMethodIDOf(_classRef, "method", "()Ljava/lang/String;");
 
-  /// from: public java.lang.String method()
+  /// from: public final java.lang.String method()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString method() =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1337,16 +1469,32 @@ class Request extends jni.JObject {
   static final _id_headers =
       jniAccessors.getMethodIDOf(_classRef, "headers", "()Lokhttp3/Headers;");
 
-  /// from: public okhttp3.Headers headers()
+  /// from: public final okhttp3.Headers headers()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Headers headers() =>
       const $HeadersType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_headers, jni.JniCallType.objectType, []).object);
 
+  static final _id_body =
+      jniAccessors.getMethodIDOf(_classRef, "body", "()Lokhttp3/RequestBody;");
+
+  /// from: public final okhttp3.RequestBody body()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  RequestBody body() =>
+      const $RequestBodyType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_body, jni.JniCallType.objectType, []).object);
+
+  static final _id_isHttps =
+      jniAccessors.getMethodIDOf(_classRef, "isHttps", "()Z");
+
+  /// from: public final boolean isHttps()
+  bool isHttps() => jniAccessors.callMethodWithArgs(
+      reference, _id_isHttps, jni.JniCallType.booleanType, []).boolean;
+
   static final _id_header = jniAccessors.getMethodIDOf(
       _classRef, "header", "(Ljava/lang/String;)Ljava/lang/String;");
 
-  /// from: public java.lang.String header(java.lang.String string)
+  /// from: public final java.lang.String header(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString header(jni.JString string) =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -1355,25 +1503,16 @@ class Request extends jni.JObject {
   static final _id_headers1 = jniAccessors.getMethodIDOf(
       _classRef, "headers", "(Ljava/lang/String;)Ljava/util/List;");
 
-  /// from: public java.util.List headers(java.lang.String string)
+  /// from: public final java.util.List headers(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject headers1(jni.JString string) =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
           _id_headers1, jni.JniCallType.objectType, [string.reference]).object);
 
-  static final _id_body =
-      jniAccessors.getMethodIDOf(_classRef, "body", "()Lokhttp3/RequestBody;");
-
-  /// from: public okhttp3.RequestBody body()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  RequestBody body() =>
-      const $RequestBodyType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_body, jni.JniCallType.objectType, []).object);
-
   static final _id_tag =
       jniAccessors.getMethodIDOf(_classRef, "tag", "()Ljava/lang/Object;");
 
-  /// from: public java.lang.Object tag()
+  /// from: public final java.lang.Object tag()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject tag() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1382,7 +1521,7 @@ class Request extends jni.JObject {
   static final _id_tag1 = jniAccessors.getMethodIDOf(
       _classRef, "tag", "(Ljava/lang/Class;)Ljava/lang/Object;");
 
-  /// from: public T tag(java.lang.Class class)
+  /// from: public final T tag(java.lang.Class class)
   /// The returned object must be deleted after use, by calling the `delete` method.
   T tag1<T extends jni.JObject>(jni.JObjType<T> $T, jni.JObject class0) =>
       $T.fromRef(jniAccessors.callMethodWithArgs(reference, _id_tag1,
@@ -1391,7 +1530,7 @@ class Request extends jni.JObject {
   static final _id_newBuilder = jniAccessors.getMethodIDOf(
       _classRef, "newBuilder", "()Lokhttp3/Request\$Builder;");
 
-  /// from: public okhttp3.Request$Builder newBuilder()
+  /// from: public final okhttp3.Request$Builder newBuilder()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Request_Builder newBuilder() =>
       const $Request_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1400,18 +1539,11 @@ class Request extends jni.JObject {
   static final _id_cacheControl = jniAccessors.getMethodIDOf(
       _classRef, "cacheControl", "()Lokhttp3/CacheControl;");
 
-  /// from: public okhttp3.CacheControl cacheControl()
+  /// from: public final okhttp3.CacheControl cacheControl()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject cacheControl() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_cacheControl, jni.JniCallType.objectType, []).object);
-
-  static final _id_isHttps =
-      jniAccessors.getMethodIDOf(_classRef, "isHttps", "()Z");
-
-  /// from: public boolean isHttps()
-  bool isHttps() => jniAccessors.callMethodWithArgs(
-      reference, _id_isHttps, jni.JniCallType.booleanType, []).boolean;
 
   static final _id_toString1 =
       jniAccessors.getMethodIDOf(_classRef, "toString", "()Ljava/lang/String;");
@@ -1467,6 +1599,15 @@ class Request_Builder extends jni.JObject {
   Request_Builder()
       : super.fromRef(
             jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
+
+  static final _id_ctor1 =
+      jniAccessors.getMethodIDOf(_classRef, "<init>", "(Lokhttp3/Request;)V");
+
+  /// from: public void <init>(okhttp3.Request request)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Request_Builder.ctor1(Request request)
+      : super.fromRef(jniAccessors.newObjectWithArgs(
+            _classRef, _id_ctor1, [request.reference]).object);
 
   static final _id_url = jniAccessors.getMethodIDOf(
       _classRef, "url", "(Lokhttp3/HttpUrl;)Lokhttp3/Request\$Builder;");
@@ -1608,15 +1749,6 @@ class Request_Builder extends jni.JObject {
           jni.JniCallType.objectType,
           [requestBody.reference]).object);
 
-  static final _id_delete2 = jniAccessors.getMethodIDOf(
-      _classRef, "delete", "()Lokhttp3/Request\$Builder;");
-
-  /// from: public okhttp3.Request$Builder delete()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Request_Builder delete2() =>
-      const $Request_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_delete2, jni.JniCallType.objectType, []).object);
-
   static final _id_put = jniAccessors.getMethodIDOf(
       _classRef, "put", "(Lokhttp3/RequestBody;)Lokhttp3/Request\$Builder;");
 
@@ -1686,6 +1818,15 @@ class Request_Builder extends jni.JObject {
   Request build() =>
       const $RequestType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_build, jni.JniCallType.objectType, []).object);
+
+  static final _id_delete2 = jniAccessors.getMethodIDOf(
+      _classRef, "delete", "()Lokhttp3/Request\$Builder;");
+
+  /// from: public final okhttp3.Request$Builder delete()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Request_Builder delete2() =>
+      const $Request_BuilderType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_delete2, jni.JniCallType.objectType, []).object);
 }
 
 class $Request_BuilderType extends jni.JObjType<Request_Builder> {
@@ -1723,6 +1864,16 @@ class RequestBody extends jni.JObject {
 
   /// The type which includes information such as the signature of this class.
   static const type = $RequestBodyType();
+
+  static final _id_Companion = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/RequestBody\$Companion;");
+
+  /// from: static public final okhttp3.RequestBody$Companion Companion
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static jni.JObject get Companion =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion, jni.JniCallType.objectType)
+          .object);
 
   static final _id_ctor =
       jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
@@ -1774,65 +1925,164 @@ class RequestBody extends jni.JObject {
       reference, _id_isOneShot, jni.JniCallType.booleanType, []).boolean;
 
   static final _id_create = jniAccessors.getStaticMethodIDOf(_classRef,
-      "create", "(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;");
+      "create", "(Ljava/lang/String;Lokhttp3/MediaType;)Lokhttp3/RequestBody;");
 
-  /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.lang.String string)
+  /// from: static public final okhttp3.RequestBody create(java.lang.String string, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create(MediaType mediaType, jni.JString string) =>
+  static RequestBody create(jni.JString string, MediaType mediaType) =>
       const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create,
           jni.JniCallType.objectType,
-          [mediaType.reference, string.reference]).object);
+          [string.reference, mediaType.reference]).object);
 
   static final _id_create1 = jniAccessors.getStaticMethodIDOf(_classRef,
-      "create", "(Lokhttp3/MediaType;Lokio/ByteString;)Lokhttp3/RequestBody;");
+      "create", "(Lokio/ByteString;Lokhttp3/MediaType;)Lokhttp3/RequestBody;");
 
-  /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
+  /// from: static public final okhttp3.RequestBody create(okio.ByteString byteString, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create1(MediaType mediaType, jni.JObject byteString) =>
+  static RequestBody create1(jni.JObject byteString, MediaType mediaType) =>
       const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create1,
           jni.JniCallType.objectType,
-          [mediaType.reference, byteString.reference]).object);
+          [byteString.reference, mediaType.reference]).object);
 
   static final _id_create2 = jniAccessors.getStaticMethodIDOf(
-      _classRef, "create", "(Lokhttp3/MediaType;[B)Lokhttp3/RequestBody;");
+      _classRef, "create", "([BLokhttp3/MediaType;II)Lokhttp3/RequestBody;");
 
-  /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs)
+  /// from: static public final okhttp3.RequestBody create(byte[] bs, okhttp3.MediaType mediaType, int i, int i1)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create2(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
+  static RequestBody create2(
+          jni.JArray<jni.JByte> bs, MediaType mediaType, int i, int i1) =>
       const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create2,
           jni.JniCallType.objectType,
-          [mediaType.reference, bs.reference]).object);
+          [bs.reference, mediaType.reference, i, i1]).object);
 
-  static final _id_create3 = jniAccessors.getStaticMethodIDOf(
-      _classRef, "create", "(Lokhttp3/MediaType;[BII)Lokhttp3/RequestBody;");
+  static final _id_create3 = jniAccessors.getStaticMethodIDOf(_classRef,
+      "create", "(Ljava/io/File;Lokhttp3/MediaType;)Lokhttp3/RequestBody;");
 
-  /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs, int i, int i1)
+  /// from: static public final okhttp3.RequestBody create(java.io.File file, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create3(
-          MediaType mediaType, jni.JArray<jni.JByte> bs, int i, int i1) =>
+  static RequestBody create3(jni.JObject file, MediaType mediaType) =>
       const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create3,
           jni.JniCallType.objectType,
-          [mediaType.reference, bs.reference, i, i1]).object);
+          [file.reference, mediaType.reference]).object);
 
   static final _id_create4 = jniAccessors.getStaticMethodIDOf(_classRef,
-      "create", "(Lokhttp3/MediaType;Ljava/io/File;)Lokhttp3/RequestBody;");
+      "create", "(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;");
 
-  /// from: static public okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.io.File file)
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static RequestBody create4(MediaType mediaType, jni.JObject file) =>
+  static RequestBody create4(MediaType mediaType, jni.JString string) =>
       const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create4,
           jni.JniCallType.objectType,
+          [mediaType.reference, string.reference]).object);
+
+  static final _id_create5 = jniAccessors.getStaticMethodIDOf(_classRef,
+      "create", "(Lokhttp3/MediaType;Lokio/ByteString;)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create5(MediaType mediaType, jni.JObject byteString) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create5,
+          jni.JniCallType.objectType,
+          [mediaType.reference, byteString.reference]).object);
+
+  static final _id_create6 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "(Lokhttp3/MediaType;[BII)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs, int i, int i1)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create6(
+          MediaType mediaType, jni.JArray<jni.JByte> bs, int i, int i1) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create6,
+          jni.JniCallType.objectType,
+          [mediaType.reference, bs.reference, i, i1]).object);
+
+  static final _id_create7 = jniAccessors.getStaticMethodIDOf(_classRef,
+      "create", "(Lokhttp3/MediaType;Ljava/io/File;)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, java.io.File file)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create7(MediaType mediaType, jni.JObject file) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create7,
+          jni.JniCallType.objectType,
           [mediaType.reference, file.reference]).object);
+
+  static final _id_create8 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "([BLokhttp3/MediaType;I)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(byte[] bs, okhttp3.MediaType mediaType, int i)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create8(
+          jni.JArray<jni.JByte> bs, MediaType mediaType, int i) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create8,
+          jni.JniCallType.objectType,
+          [bs.reference, mediaType.reference, i]).object);
+
+  static final _id_create9 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "([BLokhttp3/MediaType;)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(byte[] bs, okhttp3.MediaType mediaType)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create9(jni.JArray<jni.JByte> bs, MediaType mediaType) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create9,
+          jni.JniCallType.objectType,
+          [bs.reference, mediaType.reference]).object);
+
+  static final _id_create10 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "([B)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(byte[] bs)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create10(jni.JArray<jni.JByte> bs) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create10,
+          jni.JniCallType.objectType,
+          [bs.reference]).object);
+
+  static final _id_create11 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "(Lokhttp3/MediaType;[BI)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs, int i)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create11(
+          MediaType mediaType, jni.JArray<jni.JByte> bs, int i) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create11,
+          jni.JniCallType.objectType,
+          [mediaType.reference, bs.reference, i]).object);
+
+  static final _id_create12 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "(Lokhttp3/MediaType;[B)Lokhttp3/RequestBody;");
+
+  /// from: static public final okhttp3.RequestBody create(okhttp3.MediaType mediaType, byte[] bs)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static RequestBody create12(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
+      const $RequestBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create12,
+          jni.JniCallType.objectType,
+          [mediaType.reference, bs.reference]).object);
 }
 
 class $RequestBodyType extends jni.JObjType<RequestBody> {
@@ -1870,6 +2120,16 @@ class MultipartBody extends RequestBody {
 
   /// The type which includes information such as the signature of this class.
   static const type = $MultipartBodyType();
+
+  static final _id_Companion1 = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/MultipartBody\$Companion;");
+
+  /// from: static public final okhttp3.MultipartBody$Companion Companion
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static jni.JObject get Companion1 =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion1, jni.JniCallType.objectType)
+          .object);
 
   static final _id_MIXED = jniAccessors.getStaticFieldIDOf(
       _classRef, "MIXED", "Lokhttp3/MediaType;");
@@ -1918,10 +2178,32 @@ class MultipartBody extends RequestBody {
       .getStaticField(_classRef, _id_FORM, jni.JniCallType.objectType)
       .object);
 
+  static final _id_ctor1 = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "(Lokio/ByteString;Lokhttp3/MediaType;Ljava/util/List;)V");
+
+  /// from: public void <init>(okio.ByteString byteString, okhttp3.MediaType mediaType, java.util.List list)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody.ctor1(
+      jni.JObject byteString, MediaType mediaType, jni.JObject list)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor1, [
+          byteString.reference,
+          mediaType.reference,
+          list.reference
+        ]).object);
+
+  static final _id_parts =
+      jniAccessors.getMethodIDOf(_classRef, "parts", "()Ljava/util/List;");
+
+  /// from: public final java.util.List parts()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject parts() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_parts, jni.JniCallType.objectType, []).object);
+
   static final _id_boundary =
       jniAccessors.getMethodIDOf(_classRef, "boundary", "()Ljava/lang/String;");
 
-  /// from: public java.lang.String boundary()
+  /// from: public final java.lang.String boundary()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString boundary() =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
@@ -1929,23 +2211,14 @@ class MultipartBody extends RequestBody {
 
   static final _id_size = jniAccessors.getMethodIDOf(_classRef, "size", "()I");
 
-  /// from: public int size()
+  /// from: public final int size()
   int size() => jniAccessors.callMethodWithArgs(
       reference, _id_size, jni.JniCallType.intType, []).integer;
-
-  static final _id_parts =
-      jniAccessors.getMethodIDOf(_classRef, "parts", "()Ljava/util/List;");
-
-  /// from: public java.util.List parts()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject parts() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_parts, jni.JniCallType.objectType, []).object);
 
   static final _id_part0 = jniAccessors.getMethodIDOf(
       _classRef, "part", "(I)Lokhttp3/MultipartBody\$Part;");
 
-  /// from: public okhttp3.MultipartBody$Part part(int i)
+  /// from: public final okhttp3.MultipartBody$Part part(int i)
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject part0(int i) =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -2016,27 +2289,28 @@ class MultipartBody_Builder extends jni.JObject {
   static const type = $MultipartBody_BuilderType();
 
   static final _id_ctor =
-      jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
-
-  /// from: public void <init>()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  MultipartBody_Builder()
-      : super.fromRef(
-            jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
-
-  static final _id_ctor1 =
       jniAccessors.getMethodIDOf(_classRef, "<init>", "(Ljava/lang/String;)V");
 
   /// from: public void <init>(java.lang.String string)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  MultipartBody_Builder.ctor1(jni.JString string)
-      : super.fromRef(jniAccessors.newObjectWithArgs(
-            _classRef, _id_ctor1, [string.reference]).object);
+  MultipartBody_Builder(jni.JString string)
+      : super.fromRef(jniAccessors
+            .newObjectWithArgs(_classRef, _id_ctor, [string.reference]).object);
+
+  static final _id_ctor1 = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "(Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V");
+
+  /// from: public void <init>(java.lang.String string, int i, kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder.ctor1(
+      jni.JString string, int i, jni.JObject defaultConstructorMarker)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor1,
+            [string.reference, i, defaultConstructorMarker.reference]).object);
 
   static final _id_setType = jniAccessors.getMethodIDOf(_classRef, "setType",
       "(Lokhttp3/MediaType;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder setType(okhttp3.MediaType mediaType)
+  /// from: public final okhttp3.MultipartBody$Builder setType(okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder setType(MediaType mediaType) =>
       const $MultipartBody_BuilderType().fromRef(jniAccessors
@@ -2046,7 +2320,7 @@ class MultipartBody_Builder extends jni.JObject {
   static final _id_addPart = jniAccessors.getMethodIDOf(_classRef, "addPart",
       "(Lokhttp3/RequestBody;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.RequestBody requestBody)
+  /// from: public final okhttp3.MultipartBody$Builder addPart(okhttp3.RequestBody requestBody)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder addPart(RequestBody requestBody) =>
       const $MultipartBody_BuilderType().fromRef(jniAccessors
@@ -2056,7 +2330,7 @@ class MultipartBody_Builder extends jni.JObject {
   static final _id_addPart1 = jniAccessors.getMethodIDOf(_classRef, "addPart",
       "(Lokhttp3/Headers;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.Headers headers, okhttp3.RequestBody requestBody)
+  /// from: public final okhttp3.MultipartBody$Builder addPart(okhttp3.Headers headers, okhttp3.RequestBody requestBody)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder addPart1(Headers headers, RequestBody requestBody) =>
       const $MultipartBody_BuilderType().fromRef(jniAccessors
@@ -2071,7 +2345,7 @@ class MultipartBody_Builder extends jni.JObject {
       "addFormDataPart",
       "(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1)
+  /// from: public final okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder addFormDataPart(
           jni.JString string, jni.JString string1) =>
@@ -2087,7 +2361,7 @@ class MultipartBody_Builder extends jni.JObject {
       "addFormDataPart",
       "(Ljava/lang/String;Ljava/lang/String;Lokhttp3/RequestBody;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1, okhttp3.RequestBody requestBody)
+  /// from: public final okhttp3.MultipartBody$Builder addFormDataPart(java.lang.String string, java.lang.String string1, okhttp3.RequestBody requestBody)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder addFormDataPart1(
           jni.JString string, jni.JString string1, RequestBody requestBody) =>
@@ -2102,7 +2376,7 @@ class MultipartBody_Builder extends jni.JObject {
   static final _id_addPart2 = jniAccessors.getMethodIDOf(_classRef, "addPart",
       "(Lokhttp3/MultipartBody\$Part;)Lokhttp3/MultipartBody\$Builder;");
 
-  /// from: public okhttp3.MultipartBody$Builder addPart(okhttp3.MultipartBody$Part part)
+  /// from: public final okhttp3.MultipartBody$Builder addPart(okhttp3.MultipartBody$Part part)
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody_Builder addPart2(jni.JObject part0) =>
       const $MultipartBody_BuilderType().fromRef(jniAccessors
@@ -2112,11 +2386,20 @@ class MultipartBody_Builder extends jni.JObject {
   static final _id_build = jniAccessors.getMethodIDOf(
       _classRef, "build", "()Lokhttp3/MultipartBody;");
 
-  /// from: public okhttp3.MultipartBody build()
+  /// from: public final okhttp3.MultipartBody build()
   /// The returned object must be deleted after use, by calling the `delete` method.
   MultipartBody build() =>
       const $MultipartBodyType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_build, jni.JniCallType.objectType, []).object);
+
+  static final _id_ctor2 =
+      jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
+
+  /// from: public void <init>()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MultipartBody_Builder.ctor2()
+      : super.fromRef(
+            jniAccessors.newObjectWithArgs(_classRef, _id_ctor2, []).object);
 }
 
 class $MultipartBody_BuilderType extends jni.JObjType<MultipartBody_Builder> {
@@ -2156,59 +2439,45 @@ class MediaType extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $MediaTypeType();
 
-  static final _id_get0 = jniAccessors.getStaticMethodIDOf(
-      _classRef, "get", "(Ljava/lang/String;)Lokhttp3/MediaType;");
+  static final _id_Companion = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/MediaType\$Companion;");
 
-  /// from: static public okhttp3.MediaType get(java.lang.String string)
+  /// from: static public final okhttp3.MediaType$Companion Companion
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static MediaType get0(jni.JString string) =>
-      const $MediaTypeType().fromRef(jniAccessors.callStaticMethodWithArgs(
-          _classRef,
-          _id_get0,
-          jni.JniCallType.objectType,
-          [string.reference]).object);
-
-  static final _id_parse = jniAccessors.getStaticMethodIDOf(
-      _classRef, "parse", "(Ljava/lang/String;)Lokhttp3/MediaType;");
-
-  /// from: static public okhttp3.MediaType parse(java.lang.String string)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  static MediaType parse(jni.JString string) =>
-      const $MediaTypeType().fromRef(jniAccessors.callStaticMethodWithArgs(
-          _classRef,
-          _id_parse,
-          jni.JniCallType.objectType,
-          [string.reference]).object);
+  static jni.JObject get Companion =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion, jni.JniCallType.objectType)
+          .object);
 
   static final _id_subtype =
       jniAccessors.getMethodIDOf(_classRef, "subtype", "()Ljava/lang/String;");
 
-  /// from: public java.lang.String subtype()
+  /// from: public final java.lang.String subtype()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString subtype() =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_subtype, jni.JniCallType.objectType, []).object);
 
-  static final _id_charset = jniAccessors.getMethodIDOf(
-      _classRef, "charset", "()Ljava/nio/charset/Charset;");
-
-  /// from: public java.nio.charset.Charset charset()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject charset() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_charset, jni.JniCallType.objectType, []).object);
-
-  static final _id_charset1 = jniAccessors.getMethodIDOf(_classRef, "charset",
+  static final _id_charset = jniAccessors.getMethodIDOf(_classRef, "charset",
       "(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;");
 
-  /// from: public java.nio.charset.Charset charset(java.nio.charset.Charset charset)
+  /// from: public final java.nio.charset.Charset charset(java.nio.charset.Charset charset)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject charset1(jni.JObject charset) =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+  jni.JObject charset(jni.JObject charset) =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_charset, jni.JniCallType.objectType, [charset.reference]).object);
+
+  static final _id_parameter = jniAccessors.getMethodIDOf(
+      _classRef, "parameter", "(Ljava/lang/String;)Ljava/lang/String;");
+
+  /// from: public final java.lang.String parameter(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString parameter(jni.JString string) =>
+      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
           reference,
-          _id_charset1,
+          _id_parameter,
           jni.JniCallType.objectType,
-          [charset.reference]).object);
+          [string.reference]).object);
 
   static final _id_toString1 =
       jniAccessors.getMethodIDOf(_classRef, "toString", "()Ljava/lang/String;");
@@ -2232,6 +2501,54 @@ class MediaType extends jni.JObject {
   /// from: public int hashCode()
   int hashCode1() => jniAccessors.callMethodWithArgs(
       reference, _id_hashCode1, jni.JniCallType.intType, []).integer;
+
+  static final _id_charset1 = jniAccessors.getMethodIDOf(
+      _classRef, "charset", "()Ljava/nio/charset/Charset;");
+
+  /// from: public final java.nio.charset.Charset charset()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject charset1() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_charset1, jni.JniCallType.objectType, []).object);
+
+  static final _id_get0 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "get", "(Ljava/lang/String;)Lokhttp3/MediaType;");
+
+  /// from: static public final okhttp3.MediaType get(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType get0(jni.JString string) =>
+      const $MediaTypeType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_get0,
+          jni.JniCallType.objectType,
+          [string.reference]).object);
+
+  static final _id_parse = jniAccessors.getStaticMethodIDOf(
+      _classRef, "parse", "(Ljava/lang/String;)Lokhttp3/MediaType;");
+
+  /// from: static public final okhttp3.MediaType parse(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static MediaType parse(jni.JString string) =>
+      const $MediaTypeType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_parse,
+          jni.JniCallType.objectType,
+          [string.reference]).object);
+
+  static final _id_ctor = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V");
+
+  /// from: public void <init>(java.lang.String string, java.lang.String string1, java.lang.String string2, java.lang.String[] strings, kotlin.jvm.internal.DefaultConstructorMarker defaultConstructorMarker)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  MediaType(jni.JString string, jni.JString string1, jni.JString string2,
+      jni.JArray<jni.JString> strings, jni.JObject defaultConstructorMarker)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor, [
+          string.reference,
+          string1.reference,
+          string2.reference,
+          strings.reference,
+          defaultConstructorMarker.reference
+        ]).object);
 }
 
 class $MediaTypeType extends jni.JObjType<MediaType> {
@@ -2270,10 +2587,45 @@ class Response extends jni.JObject {
   /// The type which includes information such as the signature of this class.
   static const type = $ResponseType();
 
+  static final _id_ctor = jniAccessors.getMethodIDOf(_classRef, "<init>",
+      "(Lokhttp3/Request;Lokhttp3/Protocol;Ljava/lang/String;ILokhttp3/Handshake;Lokhttp3/Headers;Lokhttp3/ResponseBody;Lokhttp3/Response;Lokhttp3/Response;Lokhttp3/Response;JJLokhttp3/internal/connection/Exchange;)V");
+
+  /// from: public void <init>(okhttp3.Request request, okhttp3.Protocol protocol, java.lang.String string, int i, okhttp3.Handshake handshake, okhttp3.Headers headers, okhttp3.ResponseBody responseBody, okhttp3.Response response, okhttp3.Response response1, okhttp3.Response response2, long j, long j1, okhttp3.internal.connection.Exchange exchange)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Response(
+      Request request,
+      jni.JObject protocol,
+      jni.JString string,
+      int i,
+      jni.JObject handshake,
+      Headers headers,
+      ResponseBody responseBody,
+      Response response,
+      Response response1,
+      Response response2,
+      int j,
+      int j1,
+      jni.JObject exchange)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor, [
+          request.reference,
+          protocol.reference,
+          string.reference,
+          i,
+          handshake.reference,
+          headers.reference,
+          responseBody.reference,
+          response.reference,
+          response1.reference,
+          response2.reference,
+          j,
+          j1,
+          exchange.reference
+        ]).object);
+
   static final _id_request =
       jniAccessors.getMethodIDOf(_classRef, "request", "()Lokhttp3/Request;");
 
-  /// from: public okhttp3.Request request()
+  /// from: public final okhttp3.Request request()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Request request() =>
       const $RequestType().fromRef(jniAccessors.callMethodWithArgs(
@@ -2282,129 +2634,58 @@ class Response extends jni.JObject {
   static final _id_protocol =
       jniAccessors.getMethodIDOf(_classRef, "protocol", "()Lokhttp3/Protocol;");
 
-  /// from: public okhttp3.Protocol protocol()
+  /// from: public final okhttp3.Protocol protocol()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject protocol() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_protocol, jni.JniCallType.objectType, []).object);
 
-  static final _id_code = jniAccessors.getMethodIDOf(_classRef, "code", "()I");
-
-  /// from: public int code()
-  int code() => jniAccessors.callMethodWithArgs(
-      reference, _id_code, jni.JniCallType.intType, []).integer;
-
-  static final _id_isSuccessful =
-      jniAccessors.getMethodIDOf(_classRef, "isSuccessful", "()Z");
-
-  /// from: public boolean isSuccessful()
-  bool isSuccessful() => jniAccessors.callMethodWithArgs(
-      reference, _id_isSuccessful, jni.JniCallType.booleanType, []).boolean;
-
   static final _id_message =
       jniAccessors.getMethodIDOf(_classRef, "message", "()Ljava/lang/String;");
 
-  /// from: public java.lang.String message()
+  /// from: public final java.lang.String message()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JString message() =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_message, jni.JniCallType.objectType, []).object);
 
+  static final _id_code = jniAccessors.getMethodIDOf(_classRef, "code", "()I");
+
+  /// from: public final int code()
+  int code() => jniAccessors.callMethodWithArgs(
+      reference, _id_code, jni.JniCallType.intType, []).integer;
+
   static final _id_handshake = jniAccessors.getMethodIDOf(
       _classRef, "handshake", "()Lokhttp3/Handshake;");
 
-  /// from: public okhttp3.Handshake handshake()
+  /// from: public final okhttp3.Handshake handshake()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject handshake() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_handshake, jni.JniCallType.objectType, []).object);
 
-  static final _id_headers = jniAccessors.getMethodIDOf(
-      _classRef, "headers", "(Ljava/lang/String;)Ljava/util/List;");
-
-  /// from: public java.util.List headers(java.lang.String string)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject headers(jni.JString string) =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_headers, jni.JniCallType.objectType, [string.reference]).object);
-
-  static final _id_header = jniAccessors.getMethodIDOf(
-      _classRef, "header", "(Ljava/lang/String;)Ljava/lang/String;");
-
-  /// from: public java.lang.String header(java.lang.String string)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JString header(jni.JString string) =>
-      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_header, jni.JniCallType.objectType, [string.reference]).object);
-
-  static final _id_header1 = jniAccessors.getMethodIDOf(_classRef, "header",
-      "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
-
-  /// from: public java.lang.String header(java.lang.String string, java.lang.String string1)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JString header1(jni.JString string, jni.JString string1) =>
-      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
-          reference,
-          _id_header1,
-          jni.JniCallType.objectType,
-          [string.reference, string1.reference]).object);
-
-  static final _id_headers1 =
+  static final _id_headers =
       jniAccessors.getMethodIDOf(_classRef, "headers", "()Lokhttp3/Headers;");
 
-  /// from: public okhttp3.Headers headers()
+  /// from: public final okhttp3.Headers headers()
   /// The returned object must be deleted after use, by calling the `delete` method.
-  Headers headers1() =>
+  Headers headers() =>
       const $HeadersType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_headers1, jni.JniCallType.objectType, []).object);
-
-  static final _id_trailers =
-      jniAccessors.getMethodIDOf(_classRef, "trailers", "()Lokhttp3/Headers;");
-
-  /// from: public okhttp3.Headers trailers()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  Headers trailers() =>
-      const $HeadersType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_trailers, jni.JniCallType.objectType, []).object);
-
-  static final _id_peekBody = jniAccessors.getMethodIDOf(
-      _classRef, "peekBody", "(J)Lokhttp3/ResponseBody;");
-
-  /// from: public okhttp3.ResponseBody peekBody(long j)
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  ResponseBody peekBody(int j) =>
-      const $ResponseBodyType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_peekBody, jni.JniCallType.objectType, [j]).object);
+          reference, _id_headers, jni.JniCallType.objectType, []).object);
 
   static final _id_body =
       jniAccessors.getMethodIDOf(_classRef, "body", "()Lokhttp3/ResponseBody;");
 
-  /// from: public okhttp3.ResponseBody body()
+  /// from: public final okhttp3.ResponseBody body()
   /// The returned object must be deleted after use, by calling the `delete` method.
   ResponseBody body() =>
       const $ResponseBodyType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_body, jni.JniCallType.objectType, []).object);
 
-  static final _id_newBuilder = jniAccessors.getMethodIDOf(
-      _classRef, "newBuilder", "()Lokhttp3/Response\$Builder;");
-
-  /// from: public okhttp3.Response$Builder newBuilder()
-  /// The returned object must be deleted after use, by calling the `delete` method.
-  jni.JObject newBuilder() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_newBuilder, jni.JniCallType.objectType, []).object);
-
-  static final _id_isRedirect =
-      jniAccessors.getMethodIDOf(_classRef, "isRedirect", "()Z");
-
-  /// from: public boolean isRedirect()
-  bool isRedirect() => jniAccessors.callMethodWithArgs(
-      reference, _id_isRedirect, jni.JniCallType.booleanType, []).boolean;
-
   static final _id_networkResponse = jniAccessors.getMethodIDOf(
       _classRef, "networkResponse", "()Lokhttp3/Response;");
 
-  /// from: public okhttp3.Response networkResponse()
+  /// from: public final okhttp3.Response networkResponse()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Response networkResponse() =>
       const $ResponseType().fromRef(jniAccessors.callMethodWithArgs(reference,
@@ -2413,7 +2694,7 @@ class Response extends jni.JObject {
   static final _id_cacheResponse = jniAccessors.getMethodIDOf(
       _classRef, "cacheResponse", "()Lokhttp3/Response;");
 
-  /// from: public okhttp3.Response cacheResponse()
+  /// from: public final okhttp3.Response cacheResponse()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Response cacheResponse() =>
       const $ResponseType().fromRef(jniAccessors.callMethodWithArgs(
@@ -2422,16 +2703,101 @@ class Response extends jni.JObject {
   static final _id_priorResponse = jniAccessors.getMethodIDOf(
       _classRef, "priorResponse", "()Lokhttp3/Response;");
 
-  /// from: public okhttp3.Response priorResponse()
+  /// from: public final okhttp3.Response priorResponse()
   /// The returned object must be deleted after use, by calling the `delete` method.
   Response priorResponse() =>
       const $ResponseType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_priorResponse, jni.JniCallType.objectType, []).object);
 
+  static final _id_sentRequestAtMillis =
+      jniAccessors.getMethodIDOf(_classRef, "sentRequestAtMillis", "()J");
+
+  /// from: public final long sentRequestAtMillis()
+  int sentRequestAtMillis() => jniAccessors.callMethodWithArgs(
+      reference, _id_sentRequestAtMillis, jni.JniCallType.longType, []).long;
+
+  static final _id_receivedResponseAtMillis =
+      jniAccessors.getMethodIDOf(_classRef, "receivedResponseAtMillis", "()J");
+
+  /// from: public final long receivedResponseAtMillis()
+  int receivedResponseAtMillis() => jniAccessors.callMethodWithArgs(reference,
+      _id_receivedResponseAtMillis, jni.JniCallType.longType, []).long;
+
+  static final _id_exchange = jniAccessors.getMethodIDOf(
+      _classRef, "exchange", "()Lokhttp3/internal/connection/Exchange;");
+
+  /// from: public final okhttp3.internal.connection.Exchange exchange()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject exchange() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_exchange, jni.JniCallType.objectType, []).object);
+
+  static final _id_isSuccessful =
+      jniAccessors.getMethodIDOf(_classRef, "isSuccessful", "()Z");
+
+  /// from: public final boolean isSuccessful()
+  bool isSuccessful() => jniAccessors.callMethodWithArgs(
+      reference, _id_isSuccessful, jni.JniCallType.booleanType, []).boolean;
+
+  static final _id_headers1 = jniAccessors.getMethodIDOf(
+      _classRef, "headers", "(Ljava/lang/String;)Ljava/util/List;");
+
+  /// from: public final java.util.List headers(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject headers1(jni.JString string) =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_headers1, jni.JniCallType.objectType, [string.reference]).object);
+
+  static final _id_header = jniAccessors.getMethodIDOf(_classRef, "header",
+      "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
+
+  /// from: public final java.lang.String header(java.lang.String string, java.lang.String string1)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString header(jni.JString string, jni.JString string1) =>
+      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_header,
+          jni.JniCallType.objectType,
+          [string.reference, string1.reference]).object);
+
+  static final _id_trailers =
+      jniAccessors.getMethodIDOf(_classRef, "trailers", "()Lokhttp3/Headers;");
+
+  /// from: public final okhttp3.Headers trailers()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  Headers trailers() =>
+      const $HeadersType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_trailers, jni.JniCallType.objectType, []).object);
+
+  static final _id_peekBody = jniAccessors.getMethodIDOf(
+      _classRef, "peekBody", "(J)Lokhttp3/ResponseBody;");
+
+  /// from: public final okhttp3.ResponseBody peekBody(long j)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  ResponseBody peekBody(int j) =>
+      const $ResponseBodyType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_peekBody, jni.JniCallType.objectType, [j]).object);
+
+  static final _id_newBuilder = jniAccessors.getMethodIDOf(
+      _classRef, "newBuilder", "()Lokhttp3/Response\$Builder;");
+
+  /// from: public final okhttp3.Response$Builder newBuilder()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject newBuilder() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_newBuilder, jni.JniCallType.objectType, []).object);
+
+  static final _id_isRedirect =
+      jniAccessors.getMethodIDOf(_classRef, "isRedirect", "()Z");
+
+  /// from: public final boolean isRedirect()
+  bool isRedirect() => jniAccessors.callMethodWithArgs(
+      reference, _id_isRedirect, jni.JniCallType.booleanType, []).boolean;
+
   static final _id_challenges =
       jniAccessors.getMethodIDOf(_classRef, "challenges", "()Ljava/util/List;");
 
-  /// from: public java.util.List challenges()
+  /// from: public final java.util.List challenges()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject challenges() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
@@ -2440,25 +2806,11 @@ class Response extends jni.JObject {
   static final _id_cacheControl = jniAccessors.getMethodIDOf(
       _classRef, "cacheControl", "()Lokhttp3/CacheControl;");
 
-  /// from: public okhttp3.CacheControl cacheControl()
+  /// from: public final okhttp3.CacheControl cacheControl()
   /// The returned object must be deleted after use, by calling the `delete` method.
   jni.JObject cacheControl() =>
       const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_cacheControl, jni.JniCallType.objectType, []).object);
-
-  static final _id_sentRequestAtMillis =
-      jniAccessors.getMethodIDOf(_classRef, "sentRequestAtMillis", "()J");
-
-  /// from: public long sentRequestAtMillis()
-  int sentRequestAtMillis() => jniAccessors.callMethodWithArgs(
-      reference, _id_sentRequestAtMillis, jni.JniCallType.longType, []).long;
-
-  static final _id_receivedResponseAtMillis =
-      jniAccessors.getMethodIDOf(_classRef, "receivedResponseAtMillis", "()J");
-
-  /// from: public long receivedResponseAtMillis()
-  int receivedResponseAtMillis() => jniAccessors.callMethodWithArgs(reference,
-      _id_receivedResponseAtMillis, jni.JniCallType.longType, []).long;
 
   static final _id_close =
       jniAccessors.getMethodIDOf(_classRef, "close", "()V");
@@ -2475,6 +2827,15 @@ class Response extends jni.JObject {
   jni.JString toString1() =>
       const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_toString1, jni.JniCallType.objectType, []).object);
+
+  static final _id_header1 = jniAccessors.getMethodIDOf(
+      _classRef, "header", "(Ljava/lang/String;)Ljava/lang/String;");
+
+  /// from: public final java.lang.String header(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString header1(jni.JString string) =>
+      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(reference,
+          _id_header1, jni.JniCallType.objectType, [string.reference]).object);
 }
 
 class $ResponseType extends jni.JObjType<Response> {
@@ -2512,6 +2873,16 @@ class ResponseBody extends jni.JObject {
 
   /// The type which includes information such as the signature of this class.
   static const type = $ResponseBodyType();
+
+  static final _id_Companion = jniAccessors.getStaticFieldIDOf(
+      _classRef, "Companion", "Lokhttp3/ResponseBody\$Companion;");
+
+  /// from: static public final okhttp3.ResponseBody$Companion Companion
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static jni.JObject get Companion =>
+      const jni.JObjectType().fromRef(jniAccessors
+          .getStaticField(_classRef, _id_Companion, jni.JniCallType.objectType)
+          .object);
 
   static final _id_ctor =
       jniAccessors.getMethodIDOf(_classRef, "<init>", "()V");
@@ -2565,6 +2936,15 @@ class ResponseBody extends jni.JObject {
       .fromRef(jniAccessors.callMethodWithArgs(
           reference, _id_bytes, jni.JniCallType.objectType, []).object);
 
+  static final _id_byteString = jniAccessors.getMethodIDOf(
+      _classRef, "byteString", "()Lokio/ByteString;");
+
+  /// from: public final okio.ByteString byteString()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JObject byteString() =>
+      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_byteString, jni.JniCallType.objectType, []).object);
+
   static final _id_charStream =
       jniAccessors.getMethodIDOf(_classRef, "charStream", "()Ljava/io/Reader;");
 
@@ -2593,53 +2973,106 @@ class ResponseBody extends jni.JObject {
   static final _id_create = jniAccessors.getStaticMethodIDOf(
       _classRef,
       "create",
-      "(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/ResponseBody;");
+      "(Ljava/lang/String;Lokhttp3/MediaType;)Lokhttp3/ResponseBody;");
 
-  /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, java.lang.String string)
+  /// from: static public final okhttp3.ResponseBody create(java.lang.String string, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create(MediaType mediaType, jni.JString string) =>
+  static ResponseBody create(jni.JString string, MediaType mediaType) =>
       const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create,
           jni.JniCallType.objectType,
-          [mediaType.reference, string.reference]).object);
+          [string.reference, mediaType.reference]).object);
 
   static final _id_create1 = jniAccessors.getStaticMethodIDOf(
-      _classRef, "create", "(Lokhttp3/MediaType;[B)Lokhttp3/ResponseBody;");
+      _classRef, "create", "([BLokhttp3/MediaType;)Lokhttp3/ResponseBody;");
 
-  /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, byte[] bs)
+  /// from: static public final okhttp3.ResponseBody create(byte[] bs, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create1(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
+  static ResponseBody create1(jni.JArray<jni.JByte> bs, MediaType mediaType) =>
       const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create1,
           jni.JniCallType.objectType,
-          [mediaType.reference, bs.reference]).object);
+          [bs.reference, mediaType.reference]).object);
 
   static final _id_create2 = jniAccessors.getStaticMethodIDOf(_classRef,
-      "create", "(Lokhttp3/MediaType;Lokio/ByteString;)Lokhttp3/ResponseBody;");
+      "create", "(Lokio/ByteString;Lokhttp3/MediaType;)Lokhttp3/ResponseBody;");
 
-  /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
+  /// from: static public final okhttp3.ResponseBody create(okio.ByteString byteString, okhttp3.MediaType mediaType)
   /// The returned object must be deleted after use, by calling the `delete` method.
-  static ResponseBody create2(MediaType mediaType, jni.JObject byteString) =>
+  static ResponseBody create2(jni.JObject byteString, MediaType mediaType) =>
       const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create2,
           jni.JniCallType.objectType,
-          [mediaType.reference, byteString.reference]).object);
+          [byteString.reference, mediaType.reference]).object);
 
   static final _id_create3 = jniAccessors.getStaticMethodIDOf(
       _classRef,
       "create",
-      "(Lokhttp3/MediaType;JLokio/BufferedSource;)Lokhttp3/ResponseBody;");
+      "(Lokio/BufferedSource;Lokhttp3/MediaType;J)Lokhttp3/ResponseBody;");
 
-  /// from: static public okhttp3.ResponseBody create(okhttp3.MediaType mediaType, long j, okio.BufferedSource bufferedSource)
+  /// from: static public final okhttp3.ResponseBody create(okio.BufferedSource bufferedSource, okhttp3.MediaType mediaType, long j)
   /// The returned object must be deleted after use, by calling the `delete` method.
   static ResponseBody create3(
-          MediaType mediaType, int j, jni.JObject bufferedSource) =>
+          jni.JObject bufferedSource, MediaType mediaType, int j) =>
       const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
           _classRef,
           _id_create3,
+          jni.JniCallType.objectType,
+          [bufferedSource.reference, mediaType.reference, j]).object);
+
+  static final _id_create4 = jniAccessors.getStaticMethodIDOf(
+      _classRef,
+      "create",
+      "(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/ResponseBody;");
+
+  /// from: static public final okhttp3.ResponseBody create(okhttp3.MediaType mediaType, java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static ResponseBody create4(MediaType mediaType, jni.JString string) =>
+      const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create4,
+          jni.JniCallType.objectType,
+          [mediaType.reference, string.reference]).object);
+
+  static final _id_create5 = jniAccessors.getStaticMethodIDOf(
+      _classRef, "create", "(Lokhttp3/MediaType;[B)Lokhttp3/ResponseBody;");
+
+  /// from: static public final okhttp3.ResponseBody create(okhttp3.MediaType mediaType, byte[] bs)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static ResponseBody create5(MediaType mediaType, jni.JArray<jni.JByte> bs) =>
+      const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create5,
+          jni.JniCallType.objectType,
+          [mediaType.reference, bs.reference]).object);
+
+  static final _id_create6 = jniAccessors.getStaticMethodIDOf(_classRef,
+      "create", "(Lokhttp3/MediaType;Lokio/ByteString;)Lokhttp3/ResponseBody;");
+
+  /// from: static public final okhttp3.ResponseBody create(okhttp3.MediaType mediaType, okio.ByteString byteString)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static ResponseBody create6(MediaType mediaType, jni.JObject byteString) =>
+      const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create6,
+          jni.JniCallType.objectType,
+          [mediaType.reference, byteString.reference]).object);
+
+  static final _id_create7 = jniAccessors.getStaticMethodIDOf(
+      _classRef,
+      "create",
+      "(Lokhttp3/MediaType;JLokio/BufferedSource;)Lokhttp3/ResponseBody;");
+
+  /// from: static public final okhttp3.ResponseBody create(okhttp3.MediaType mediaType, long j, okio.BufferedSource bufferedSource)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static ResponseBody create7(
+          MediaType mediaType, int j, jni.JObject bufferedSource) =>
+      const $ResponseBodyType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_create7,
           jni.JniCallType.objectType,
           [mediaType.reference, j, bufferedSource.reference]).object);
 }
@@ -2661,6 +3094,173 @@ extension $ResponseBodyArray on jni.JArray<ResponseBody> {
   }
 
   void operator []=(int index, ResponseBody value) {
+    (this as jni.JArray<jni.JObject>)[index] = value;
+  }
+}
+
+/// from: java.util.UUID
+class UUID extends jni.JObject {
+  late final jni.JObjType? _$type;
+  @override
+  jni.JObjType get $type => _$type ??= type;
+
+  UUID.fromRef(
+    jni.JObjectPtr ref,
+  ) : super.fromRef(ref);
+
+  static final _classRef = jniAccessors.getClassOf("java/util/UUID");
+
+  /// The type which includes information such as the signature of this class.
+  static const type = $UUIDType();
+
+  static final _id_ctor =
+      jniAccessors.getMethodIDOf(_classRef, "<init>", "(JJ)V");
+
+  /// from: public void <init>(long j, long j1)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  UUID(int j, int j1)
+      : super.fromRef(jniAccessors
+            .newObjectWithArgs(_classRef, _id_ctor, [j, j1]).object);
+
+  static final _id_randomUUID = jniAccessors.getStaticMethodIDOf(
+      _classRef, "randomUUID", "()Ljava/util/UUID;");
+
+  /// from: static public java.util.UUID randomUUID()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static UUID randomUUID() =>
+      const $UUIDType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef, _id_randomUUID, jni.JniCallType.objectType, []).object);
+
+  static final _id_nameUUIDFromBytes = jniAccessors.getStaticMethodIDOf(
+      _classRef, "nameUUIDFromBytes", "([B)Ljava/util/UUID;");
+
+  /// from: static public java.util.UUID nameUUIDFromBytes(byte[] bs)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static UUID nameUUIDFromBytes(jni.JArray<jni.JByte> bs) =>
+      const $UUIDType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_nameUUIDFromBytes,
+          jni.JniCallType.objectType,
+          [bs.reference]).object);
+
+  static final _id_fromString = jniAccessors.getStaticMethodIDOf(
+      _classRef, "fromString", "(Ljava/lang/String;)Ljava/util/UUID;");
+
+  /// from: static public java.util.UUID fromString(java.lang.String string)
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  static UUID fromString(jni.JString string) =>
+      const $UUIDType().fromRef(jniAccessors.callStaticMethodWithArgs(
+          _classRef,
+          _id_fromString,
+          jni.JniCallType.objectType,
+          [string.reference]).object);
+
+  static final _id_getLeastSignificantBits =
+      jniAccessors.getMethodIDOf(_classRef, "getLeastSignificantBits", "()J");
+
+  /// from: public long getLeastSignificantBits()
+  int getLeastSignificantBits() => jniAccessors.callMethodWithArgs(reference,
+      _id_getLeastSignificantBits, jni.JniCallType.longType, []).long;
+
+  static final _id_getMostSignificantBits =
+      jniAccessors.getMethodIDOf(_classRef, "getMostSignificantBits", "()J");
+
+  /// from: public long getMostSignificantBits()
+  int getMostSignificantBits() => jniAccessors.callMethodWithArgs(
+      reference, _id_getMostSignificantBits, jni.JniCallType.longType, []).long;
+
+  static final _id_version =
+      jniAccessors.getMethodIDOf(_classRef, "version", "()I");
+
+  /// from: public int version()
+  int version() => jniAccessors.callMethodWithArgs(
+      reference, _id_version, jni.JniCallType.intType, []).integer;
+
+  static final _id_variant =
+      jniAccessors.getMethodIDOf(_classRef, "variant", "()I");
+
+  /// from: public int variant()
+  int variant() => jniAccessors.callMethodWithArgs(
+      reference, _id_variant, jni.JniCallType.intType, []).integer;
+
+  static final _id_timestamp =
+      jniAccessors.getMethodIDOf(_classRef, "timestamp", "()J");
+
+  /// from: public long timestamp()
+  int timestamp() => jniAccessors.callMethodWithArgs(
+      reference, _id_timestamp, jni.JniCallType.longType, []).long;
+
+  static final _id_clockSequence =
+      jniAccessors.getMethodIDOf(_classRef, "clockSequence", "()I");
+
+  /// from: public int clockSequence()
+  int clockSequence() => jniAccessors.callMethodWithArgs(
+      reference, _id_clockSequence, jni.JniCallType.intType, []).integer;
+
+  static final _id_node = jniAccessors.getMethodIDOf(_classRef, "node", "()J");
+
+  /// from: public long node()
+  int node() => jniAccessors.callMethodWithArgs(
+      reference, _id_node, jni.JniCallType.longType, []).long;
+
+  static final _id_toString1 =
+      jniAccessors.getMethodIDOf(_classRef, "toString", "()Ljava/lang/String;");
+
+  /// from: public java.lang.String toString()
+  /// The returned object must be deleted after use, by calling the `delete` method.
+  jni.JString toString1() =>
+      const jni.JStringType().fromRef(jniAccessors.callMethodWithArgs(
+          reference, _id_toString1, jni.JniCallType.objectType, []).object);
+
+  static final _id_hashCode1 =
+      jniAccessors.getMethodIDOf(_classRef, "hashCode", "()I");
+
+  /// from: public int hashCode()
+  int hashCode1() => jniAccessors.callMethodWithArgs(
+      reference, _id_hashCode1, jni.JniCallType.intType, []).integer;
+
+  static final _id_equals1 =
+      jniAccessors.getMethodIDOf(_classRef, "equals", "(Ljava/lang/Object;)Z");
+
+  /// from: public boolean equals(java.lang.Object object)
+  bool equals1(jni.JObject object) => jniAccessors.callMethodWithArgs(reference,
+      _id_equals1, jni.JniCallType.booleanType, [object.reference]).boolean;
+
+  static final _id_compareTo =
+      jniAccessors.getMethodIDOf(_classRef, "compareTo", "(Ljava/util/UUID;)I");
+
+  /// from: public int compareTo(java.util.UUID uUID)
+  int compareTo(UUID uUID) => jniAccessors.callMethodWithArgs(reference,
+      _id_compareTo, jni.JniCallType.intType, [uUID.reference]).integer;
+
+  static final _id_compareTo1 = jniAccessors.getMethodIDOf(
+      _classRef, "compareTo", "(Ljava/lang/Object;)I");
+
+  /// from: public int compareTo(java.lang.Object object)
+  int compareTo1(jni.JObject object) => jniAccessors.callMethodWithArgs(
+      reference,
+      _id_compareTo1,
+      jni.JniCallType.intType,
+      [object.reference]).integer;
+}
+
+class $UUIDType extends jni.JObjType<UUID> {
+  const $UUIDType();
+
+  @override
+  String get signature => r"Ljava/util/UUID;";
+
+  @override
+  UUID fromRef(jni.JObjectPtr ref) => UUID.fromRef(ref);
+}
+
+extension $UUIDArray on jni.JArray<UUID> {
+  UUID operator [](int index) {
+    return (elementType as $UUIDType)
+        .fromRef(elementAt(index, jni.JniCallType.objectType).object);
+  }
+
+  void operator []=(int index, UUID value) {
     (this as jni.JArray<jni.JObject>)[index] = value;
   }
 }
