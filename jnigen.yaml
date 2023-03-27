@@ -70,9 +70,6 @@ exclude:
     - 'okhttp3.Response#-deprecated_receivedResponseAtMillis'
 
 output:
-  c:
-    library_name: fox_http
-    path: src/fox_http/
   dart:
     path: lib/src/okhttp3.dart
     structure: single_file
